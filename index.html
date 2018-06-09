@@ -1,93 +1,149 @@
 <!DOCTYPE html>
 <html>
-<title>Hunter Hamaker's CV Website</title>
+<title>Hunter's Website</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+    height: 100%;
+    color: #777;
+    line-height: 1.8;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+    background-image: url('img/ocean.jpg');
+    min-height: 100%;
+}
+
+/* Second image (Portfolio) */
+.bgimg-2 {
+    background-image: url('img/office.jpg');
+    min-height: 400px;
+}
+
+/* Third image (Contact) */
+.bgimg-3 {
+    background-image: url('img/SantaBarbara.jpg');
+    min-height: 400px;
+}
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+    }
+}
 </style>
-<body class="w3-light-grey">
+<body>
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="#home" class="w3-bar-item w3-button w3-hide-small"><img src="img/logo.jpg" alt="Logo" width="20" height="20"></a>
+    <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
+    <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> PORTFOLIO</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+  </div>
 
-<!-- Page Container -->
-<div class="w3-content w3-margin-top" style="max-width:1400px;">
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+    <a href="#" class="w3-bar-item w3-button w3-center"><img src="img/logo.jpg" alt="Logo" width="30" height="30"></a>
+    <a href="#about" class="w3-bar-item w3-button w3-center" onclick="toggleFunction()">ABOUT</a>
+    <a href="#portfolio" class="w3-bar-item w3-button w3-center" onclick="toggleFunction()">PORTFOLIO</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-center" onclick="toggleFunction()">CONTACT</a>
+  </div>
+</div>
 
-  <!-- The Grid -->
-  <div class="w3-row-padding">
-  
-    <!-- Left Column -->
-    <div class="w3-third">
-    
-      <div class="w3-white w3-text-grey w3-card-4">
-        <div class="w3-display-container">
-          <img src="images/tuxedo.jpg" style="width:100%" alt="Avatar">
-          <div class="w3-display-bottomleft w3-container w3-text-black">
-          </div>
-          <h2>Hunter Hamaker</h2>
-        </div>
-        <div class="w3-container">
-          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-green"></i>Salesforce Developer</p>
-          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-green"></i>Santa Barbara, CA</p>
-          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-green"></i>hhamaker22@gmail.com</p>
-          <hr>
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <img src="img/logo.jpg" class="w3-round w3-image" alt="Logo" width="500" height="333">
+  </div>
+</div>
 
-          <!-- Language Section -->
-          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-green"></i>Language Skills</b></p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-green" style="width:100%">Apex</div>
-          </div>
-          <br/>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-green" style="width:90%">Java</div>
-          </div>
-          <br/>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-green" style="width:80%">Javascript</div>
-          </div>
-          <br/>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-green" style="width:70%">Visualforce</div>
-          </div>
-          <br/>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-green" style="width:60%">Html</div>
-          </div>
-          <br/>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-green" style="width:50%">Ruby</div>
-          </div>
-          <br>
-
-          <!-- Interests Section -->
-          <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-green"></i>Interests</b></p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-center w3-green" style="height:24px;width:100%">Traveling</div>
-          </div>
-          <br>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-center w3-green" style="height:24px;width:80%">Tinkering</div>
-          </div>
-          <br>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-center w3-green" style="height:24px;width:60%">Cooking</div>
-          </div>
-          <br>
-        </div>
-      </div><br>
+<!-- Container (About Section) -->
+<div class="w3-content w3-container w3-padding-64" id="about">
+  <h3 class="w3-center">ABOUT ME</h3>
+  <p class="w3-center"><em>"The noblest pleasure is the joy of understanding."</em> - Leonardo da Vinci</p>
+  <div class="w3-row">
+    <div class="w3-col m5 w3-center w3-padding-large">
+      <p><b><i class="fa fa-user w3-margin-right"></i>Hunter Hamaker</b></p><br>
+      <img src="img/me.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="500" height="333">
     </div>
-    <!-- End Left Column -->
 
-    <!-- Right Column -->
-    <div class="w3-twothird">
-      <!-- Work Experience Section -->
-      <div class="w3-container w3-card w3-white w3-margin-bottom">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-green"></i>Work Experience</h2>
-        <div class="w3-container">
+    <!-- Hide this text on small devices -->
+    <div class="w3-col m5 w3-hide-small w3-padding-large">
+      <p>Welcome to my website. This is just a little bit about me, and what I'm all about. I was a Division III collegiate waterpolo player, and try to get into the pool as much as possible. When I'm not working; I hit the gym, fish, work on my house or truck, travel with my lovely fiance, playing with my pup, cooking, or Researching new concepts I can apply to my projects. I'm always looking for fresh idea's and fun new tech. </p>
+    </div>
+  </div>
+  <p class="w3-large w3-center w3-padding-16">Im really good at:</p>
+  <!-- skill section -->
+  <p class="w3-wide"><i class="fa fa-cloud"></i>Salesforce Development</p>
+  <div class="w3-light-grey">
+    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:90%">90%</div>
+  </div>
+  <p class="w3-wide"><i class="fa fa-tablet"></i>Web Development</p>
+  <div class="w3-light-grey">
+    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:80%">80%</div>
+  </div>
+  <p class="w3-wide"><i class="fa fa-line-chart"></i>Algorythmic Trading</p>
+  <div class="w3-light-grey">
+    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:70%">70%</div>
+  </div>
+  <p class="w3-wide"><i class="fa fa-cubes"></i>Machine Learning</p>
+  <div class="w3-light-grey">
+    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:50%">50%</div>
+  </div>
+</div>
+
+<div class="w3-row w3-center w3-dark-grey w3-padding-16">
+  <div class="w3-third w3-section">
+    <span class="w3-xlarge">8+ years</span><br>
+    Development Experience
+  </div>
+  <div class="w3-third w3-section">
+    <span class="w3-xlarge">10</span><br>
+    Ongoing projects
+  </div>
+  <div class="w3-third w3-section">
+    <span class="w3-xlarge">1</span><br>
+    Great Guy
+  </div>
+</div>
+
+<!-- Second Parallax Image with Portfolio Text -->
+<div class="bgimg-2 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+    <span class="w3-xxlarge w3-text-white w3-wide">PORTFOLIO</span>
+  </div>
+</div>
+
+<!-- Container (Portfolio Section) -->
+<div class="w3-content w3-container w3-padding-64" id="portfolio">
+  <h3 class="w3-center">MY WORK EXPERIENCE</h3>
+  <div class="w3-row-padding w3-center">
+    <div class="w3-container">
           <h5 class="w3-opacity"><b>Salesforce Developer / Appfolio</b></h5>
-          <h6 class="w3-text-green"><i class="fa fa-calendar fa-fw w3-margin-right"></i>July 2017 - <span class="w3-tag w3-green w3-round">Present</span></h6>
-          <ul>
+          <h6 class="w3-text-gray"><i class="fa fa-calendar fa-fw w3-margin-right"></i>July 2017 - <span class="w3-tag w3-gray w3-round">Present</span></h6>
+          <ul style="list-style-type:none">
             <li>Built and maintained point to point REST and SOAP integrations</li>
             <li>Built text notification system in APEX</li>
             <li>Helped Implement and maintain CICD solution for Developer and Admin Team</li>
@@ -97,8 +153,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         </div>
         <div class="w3-container">
           <h5 class="w3-opacity"><b>Salesforce Developer / LogMeIn (formerly Citrix)</b></h5>
-          <h6 class="w3-text-green"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Feb 2017 - July 2017</h6>
-          <ul>
+          <h6 class="w3-text-gray"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Feb 2017 - July 2017</h6>
+          <ul style="list-style-type:none">
             <li>Designed and built custom Triggers for business processes</li>
             <li>Helped troubleshoot issues with Dell Boomi integration for data sync between different salesforce organizations</li>
             <li>Developed Marketing qualified lead score degradation classes for tracking customer ratings.</li>
@@ -109,8 +165,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         </div>
         <div class="w3-container">
           <h5 class="w3-opacity"><b>Salesforce Administrator / Citrix Online</b></h5>
-          <h6 class="w3-text-green"><i class="fa fa-calendar fa-fw w3-margin-right"></i>July 2015 - Feb 2017</h6>
-          <ul>
+          <h6 class="w3-text-gray"><i class="fa fa-calendar fa-fw w3-margin-right"></i>July 2015 - Feb 2017</h6>
+          <ul style="list-style-type:none">
             <li>Managed and completed salesforce production support/troubleshooting/bug fix requests.</li>
             <li>Designed and built Round Robin for Sales Development Reps to assign accounts using apex.</li>
             <li>Designed and built Idea/opportunity join process for improved communications between PM’s and sales/care representatives by customizing salesforce ideas object and apex.</li>
@@ -124,8 +180,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         </div>
         <div class="w3-container">
           <h5 class="w3-opacity"><b>Data Analyst / Citrix Online</b></h5>
-          <h6 class="w3-text-green"><i class="fa fa-calendar fa-fw w3-margin-right"></i>March 2015 - July 2015</h6>
-          <ul>
+          <h6 class="w3-text-gray"><i class="fa fa-calendar fa-fw w3-margin-right"></i>March 2015 - July 2015</h6>
+          <ul style="list-style-type:none">
             <li>Upload and manage accounts distributed to Sales Reps using Dataloader</li>
             <li>Deliver advice and problem solve issues for campaign uploads and dashboards.</li>
             <li>Query and scrub data against Salesforce database using excel, and sforce connector</li>
@@ -134,8 +190,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         </div>
         <div class="w3-container">
           <h5 class="w3-opacity"><b>Sales Coordinator / Citrix Online</b></h5>
-          <h6 class="w3-text-green"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Sep 2014 - March 2015</h6>
-          <ul>
+          <h6 class="w3-text-gray"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Sep 2014 - March 2015</h6>
+          <ul style="list-style-type:none">
             <li>Validate sales leads for sales reps and provide aid in strategic communications.</li>
             <li>Led to a 50% efficiency increase in sorting overall quantity of enablement leads.</li>
             <li>Streamlined validation process of leads for competitors.</li>
@@ -144,54 +200,89 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         </div>
       </div>
 
-      <!-- Education Section -->
-      <div class="w3-container w3-card w3-white">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-book fa-fw w3-margin-right w3-xxlarge w3-text-green"></i>Education</h2>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>California Lutheran University</b></h5>
-          <h6 class="w3-text-green"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2012-2016</h6>
-          <p>Bachelors of Science - Computer Science</p>
-          <ul>
-            <li>Software Engineering Class:</li>
-            <ul>
-              <li>Worked in a team setting to develop software using the agile and waterfall methodologies</li>
-            </ul>
-            <li>Visual Basic Class:</li>
-              <ul>
-                <li>Developed a working mock microwave oven interface.</li>
-                <li>Worked in a small team setting to develop a graphical grid based rock/paper/scissors game.</li>
-              </ul>
-            <li>Capstone:</li>
-              <ul>
-                <li>Led a team in developing a software based testing program for a programmable rifle scope. (Java based)</li>
-              </ul>
-            <li>Database Management Systems:</li>
-            <ul>
-              <li>Created, maintained and managed private database in access and MySQL.</li>
-            </ul>
-            <li>Advanced Computer Programming:</li>
-              <ul>
-                <li>Learned advanced programming principles including serialization, threading, developing complex algorithms, and how to write beautiful object-oriented programs.</li>
-              </ul>
-            <li>Deans List Recipient</li>
-          </ul>
-          <hr>
-        </div>
+<!-- Third Parallax Image with Portfolio Text -->
+<div class="bgimg-3 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+     <span class="w3-xxlarge w3-text-white w3-wide">CONTACT</span>
+  </div>
+</div>
+
+<!-- Container (Contact Section) -->
+<div class="w3-content w3-container w3-padding-64" id="contact">
+  <div class="w3-row w3-padding-32 w3-section">
+    <div class="w3-col m7 w3-container">
+      <!-- Add Google Maps -->
+      <div id="googleMap" class="w3-round-large w3-greyscale" style="width:100%;height:400px;"></div>
+    </div>
+    <div class="w3-col m5 w3-panel">
+      	<div class="w3-large w3-margin-bottom w3-center"" >
+			<h3>WHERE I WORK</h3>
+	  		<p><em>Feel free to contact me!</em></p>
+	  		<i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i>Santa Barbara, USA
+	  		<br>
+        	<i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: hhamaker22@gmail.com<br>
+        	</p>
       </div>
     </div>
-    <!-- End Right Column -->
   </div>
-  <!-- End Grid -->
 </div>
-<!-- End Page Container -->
 
-<footer class="w3-container w3-green w3-center w3-margin-top">
-  <p>Find me on social media.</p>
-  <a href="https://github.com/hhamaker" target="_blank"><i class="fa fa-github w3-hover-opacity"></i></a>
-  <a href="https://www.linkedin.com/in/hhamaker" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
-  <p></p>
+<!-- Footer -->
+<footer class="w3-center w3-padding-32">
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-center"></i></a>
+  <div class="w3-xlarge w3-section">
+    <a href="https://github.com/hhamaker" target="_blank"><i class="fa fa-github w3-hover-opacity"></i></a>
+    <a href="https://www.linkedin.com/in/hhamaker/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+  </div>
 </footer>
+ 
+<!-- Add Google Maps -->
+<script>
+function myMap()
+{
+  myCenter=new google.maps.LatLng(34.4208, -119.6982);
+  var mapOptions= {
+    center:myCenter,
+    zoom:12, scrollwheel: false, draggable: false,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
 
+  var marker = new google.maps.Marker({
+    position: myCenter,
+  });
+  marker.setMap(map);
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+    } else {
+        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+    }
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4CzQisaGGPRuuxbP8r3K1nHiCBWCBC_c&callback=myMap"></script>
 </body>
-
 </html>
