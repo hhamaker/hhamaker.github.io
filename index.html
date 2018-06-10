@@ -64,7 +64,7 @@ body, html {
   </div>
 
   <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+  <div id="navSmall" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
     <a href="#" class="w3-bar-item w3-button w3-center"><img src="img/logo.jpg" alt="Logo" width="30" height="30"></a>
     <a href="#about" class="w3-bar-item w3-button w3-center" onclick="toggleFunction()">ABOUT</a>
     <a href="#resume" class="w3-bar-item w3-button w3-center" onclick="toggleFunction()">RESUME</a>
@@ -93,7 +93,7 @@ body, html {
     <div class="w3-col m5 w3-hide-small w3-padding-large">
       <br/>
       <br/>
-      <p>Welcome to my website. This is just a little bit about me, and what I'm all about. I was a Division III collegiate waterpolo player, and still get into the pool every once in a while. When I'm not working, I hit the gym, fish, work on my house or truck, travel with my lovely fiance, playing with my pup, cooking, or Researching new concepts I can apply to my projects. I'm always looking for fresh idea's and fun new tech. </p>
+      <p>Welcome to my website. This is just a little bit about me, and what I'm all about. I was a Division III collegiate waterpolo player, and still get into the pool every once in a while. When I'm not working, I hit the gym, fish, work on my house or truck, travel with my lovely fiance, play with my pup, cook, or research new concepts I can apply to my projects. I'm always looking for fresh idea's and fun new tech.</p>
     </div>
   </div>
   <p class="w3-large w3-center w3-padding-16">These are some of my skills:</p>
@@ -217,7 +217,7 @@ body, html {
       <div id="googleMap" class="w3-round-large w3-greyscale" style="width:100%;height:400px;"></div>
     </div>
     <div class="w3-col m5 w3-panel">
-      	<div class="w3-large w3-margin-bottom w3-center"" >
+      	<div class="w3-large w3-margin-bottom w3-center" >
 			<h3>WHERE I WORK</h3>
 	  		<p><em>Feel free to contact me!</em></p>
 	  		<i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i>Santa Barbara, USA
@@ -245,7 +245,7 @@ function myMap()
   myCenter=new google.maps.LatLng(34.4208, -119.6982);
   var mapOptions= {
     center:myCenter,
-    zoom:12, scrollwheel: false, draggable: false,
+    zoom:12, scrollwheel: false, draggable: true,
     mapTypeId:google.maps.MapTypeId.ROADMAP
   };
   var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
@@ -256,13 +256,6 @@ function myMap()
   marker.setMap(map);
 }
 
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
 
 // Change style of navbar on scroll
 window.onscroll = function() {myFunction()};
@@ -277,7 +270,7 @@ function myFunction() {
 
 // Used to toggle the menu on small screens when clicking on the menu button
 function toggleFunction() {
-    var x = document.getElementById("navDemo");
+    var x = document.getElementById("navSmall");
     if (x.className.indexOf("w3-show") == -1) {
         x.className += " w3-show";
     } else {
