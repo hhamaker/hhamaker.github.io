@@ -49,7 +49,7 @@
 	<body>
 		<!-- Navbar (sit on top) -->
 		<div class="w3-top">
-			<div class="w3-bar" id="myNavbar">
+			<div class="w3-bar w3-card w3-animate-top w3-white" id="myNavbar">
 			    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
 			    	<i class="fa fa-bars"></i>
 			    </a>
@@ -264,18 +264,6 @@
 				var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
 				var marker = new google.maps.Marker({position: myCenter,});
 				marker.setMap(map);
-			}
-
-
-			// Change style of navbar on scroll
-			window.onscroll = function() {myFunction()};
-			function myFunction() {
-			    var navbar = document.getElementById("myNavbar");
-			    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-			        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
-			    } else {
-			        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
-			    }
 			}
 
 			// Used to toggle the menu on small screens when clicking on the menu button
