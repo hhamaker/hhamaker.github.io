@@ -96,18 +96,18 @@
 					<br/>
 					<p>Welcome to my website. This is just a little bit about me, and what I'm all about. I spend most of my time working on projects. Sometimes that means code (Managed Packages, Django Web apps, Trading Algorithms, etc...), but other times that means working on projects around my house currently that means a foundation repair, a fence around my backyard, and a storage shed. and when I'm not working on projects, i'll be:</p>
 					<ul>
-						<li>Playing with my dog Casanova (see picture)</li>
 						<li>Spending time with my family</li>
-						<li>Traveling (I just aquired a roof tent to go camping)</li>
+						<li>Traveling</li>
 						<li>Cooking</li>
 						<li>Learning something new</li>
 					</ul>
 			    </div>
 			</div>
 		  	<p class="w3-large w3-center w3-padding-16">These are some of my skills:</p>
-					<!-- skill section -->
-					<p class="w3-wide"><i class="fa fa-cloud"></i>Software Engineering</p>
-					<p class="w3-wide"><i class="fa fa-cloud"></i>Dev-Ops</p>
+			<!-- skill section -->
+			<p class="w3-wide"><i class="fa fa-cloud"></i>Software Engineering</p>
+			<p class="w3-wide"><i class="fa fa-linode"></i>Software Architecting</p>
+			<p class="w3-wide"><i class="fa fa-cloud"></i>Dev-Ops</p>
 		  	<p class="w3-wide"><i class="fa fa-code"></i>CI-CD Solutions</p>
 		  	<p class="w3-wide"><i class="fa fa-tablet"></i>Framework Implementations</p>
 		  	<p class="w3-wide"><i class="fa fa-linode"></i>Middleware Solutions</p>
@@ -115,17 +115,9 @@
 		</div>
 
 		<div class="w3-row w3-center w3-dark-grey w3-padding-16">
-			<div class="w3-third w3-section">
+			<div class="w3-full w3-section">
 		    	<span class="w3-xlarge">10+ years</span><br>
 		    	Development Experience
-		  	</div>
-		  	<div class="w3-third w3-section">
-		    	<span class="w3-xlarge">4</span><br>
-		    	Certifications
-		  	</div>
-		  	<div class="w3-third w3-section">
-		    	<span class="w3-xlarge">1</span><br>
-		    	Great Guy
 		  	</div>
 		</div>
 
@@ -215,7 +207,7 @@
 				    <img src="img/adminCert.jpg" style="width:30%">
 		    		<img src="img/devCert.jpg" style="width:30%">
 		    		<img src="img/dev2Cert.jpg" style="width:30%">
-		    		<img src="img/cloudPractitioner.png" style="width:30%">
+		    		<!--<img src="img/cloudPractitioner.png" style="width:20%">-->
 				</div>
 				<div class="w3-content w3-container w3-padding-64" id="resume">
 					<h3 class="w3-center">MY EDUCATION</h3>
@@ -246,21 +238,11 @@
 		crossorigin="anonymous"></script>
 
 		<!-- Container (Contact Section) -->
+		<!-- Container (About Section) -->
 		<div class="w3-content w3-container w3-padding-64" id="contact">
 			<div class="w3-row w3-padding-32 w3-section">
-				<div class="w3-col m7 w3-container">
-					<!-- Add Google Maps -->
-					<div id="googleMap" class="w3-round-large w3-greyscale" style="width:100%;height:400px;"></div>
-				</div>
-				<div class="w3-col m5 w3-panel">
-					<div class="w3-large w3-margin-bottom w3-center" >
-						<h3>WHERE I WORK</h3>
-						<p><em>Feel free to contact me!</em></p>
-						<i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i>Santa Barbara, USA
-						<br>
-						<i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: hhamaker22@gmail.com<br>
-						</p>
-					</div>
+				<div class="w3-large w3-margin-bottom w3-center" >
+					<p><i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: hhamaker22@gmail.com<br></p>
 				</div>
 			</div>
 		</div>
@@ -279,14 +261,6 @@
 		 
 		<!-- Add Google Maps -->
 		<script>
-			function myMap(){
-				myCenter=new google.maps.LatLng(34.4208, -119.6982);
-				var mapOptions= {center:myCenter,zoom:12, scrollwheel: false, draggable: true,mapTypeId:google.maps.MapTypeId.ROADMAP};
-				var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
-				var marker = new google.maps.Marker({position: myCenter,});
-				marker.setMap(map);
-			}
-
 			// Used to toggle the menu on small screens when clicking on the menu button
 			function toggleFunction() {
 			    var x = document.getElementById("navSmall");
@@ -297,6 +271,5 @@
 			    }
 			}
 		</script>
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4CzQisaGGPRuuxbP8r3K1nHiCBWCBC_c&callback=myMap"></script>
 	</body>
 </html>
