@@ -1,1 +1,268 @@
-new and improved user interface code here
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Visualime Tracking Code -->
+		<script>
+			!function(e,i,n,s,t,c){e[s]||(visualime_site_id="30c5583f",e[s]={},e[s].callsQueue=[],e[s].api=function(){e[s].callsQueue.push(arguments)},t=i.createElement(n),c=i.getElementsByTagName(n)[0],t.async=1,t.src="https://visualime.com/v/visualime-a8b745.min.js",t.id=s+n,c.parentNode.insertBefore(t,c))}(window,document,"script","VISUALIME");
+		</script>
+	</head>
+	<title>Hunter's Website</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+	<script src="https://kit.fontawesome.com/2f7837f687.js" crossorigin="anonymous"></script>	
+	<style>
+		body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+		body, html {height: 100%; color: #777; line-height: 1.8;}
+
+		/* Create a Parallax Effect */
+		.bgimg-1, .bgimg-2, .bgimg-3 {
+		    background-attachment: fixed;
+		    background-position: center;
+		    background-repeat: no-repeat;
+		    background-size: cover;
+		}
+
+		/* First image (Logo. Full height) */
+		.bgimg-1 {
+		    background-image: url('img/Shoreline.jpg');
+		    min-height: 100%;
+		}
+
+		/* Second image (Resume) */
+		.bgimg-2 {
+		    background-image: url('img/office.jpg');
+		    min-height: 400px;
+		}
+
+		/* Third image (Contact) */
+		.bgimg-3 {
+		    background-image: url('img/SantaBarbara.jpg');
+		    min-height: 400px;
+		}
+
+		.w3-wide {letter-spacing: 10px;}
+		.w3-hover-opacity {cursor: pointer;}
+
+		/* Turn off parallax scrolling for tablets and phones */
+		@media only screen and (max-device-width: 1024px) {
+		    .bgimg-1, .bgimg-2, .bgimg-3 {
+		        background-attachment: scroll;
+		    }
+		}
+	</style>
+	<body>
+		<!-- Navbar (sit on top) -->
+		<div class="w3-top">
+			<div class="w3-bar w3-card w3-animate-top w3-white" id="myNavbar">
+			    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+			    	<i class="fa fa-bars"></i>
+			    </a>
+			    <a href="#home" class="w3-bar-item w3-button w3-hide-small"><img src="img/logo.jpg" alt="Logo" width="20" height="20"></a>
+			    <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
+			    <a href="#resume" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> RESUME</a>
+			    <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+			</div>
+
+			<!-- Navbar on small screens -->
+			<div id="navSmall" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+				<a href="#" class="w3-bar-item w3-button w3-center"><img src="img/logo.jpg" alt="Logo" width="30" height="30"></a>
+				<a href="#about" class="w3-bar-item w3-button w3-center" onclick="toggleFunction()">ABOUT</a>
+				<a href="#resume" class="w3-bar-item w3-button w3-center" onclick="toggleFunction()">RESUME</a>
+				<a href="#contact" class="w3-bar-item w3-button w3-center" onclick="toggleFunction()">CONTACT</a>
+			</div>
+		</div>
+
+		<!-- First Parallax Image with Logo Text -->
+		<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+			<div class="w3-display-middle" style="white-space:nowrap;">
+				<img src="img/whiteLogo.jpg" class="w3-round w3-center w3-image" alt="Logo" width="100%" height="100%">
+			</div>
+		</div>
+		<!-- Container (About Section) -->
+		<div class="w3-content w3-container w3-padding-64" id="about">
+			<h3 class="w3-center">ABOUT ME</h3>
+			<p class="w3-center"><em>"Tell me and I forget. Teach me and I remember. Involve me and I learn.”</em> - Benjamin Franklin</p>
+		  	<div class="w3-row">
+			    <div class="w3-col m5 w3-center w3-padding-large">
+			    	<p><b><i class="fa w3-margin-right"></i>Hunter Hamaker</b></p><br>
+			    	<img src="img/me.jpg" class="w3-round w3-image" alt="Photo of Hunter" width="500" height="333">
+			    </div>
+
+			    <!-- Hide this text on small devices -->
+			    <div class="w3-col m5 w3-hide-small w3-padding-large">
+					<br/>
+					<br/>
+					<p>Welcome to my website. This is just a little bit about me, and what I'm all about. I spend most of my time working on projects. Sometimes that means code (Managed Packages, Django Web apps, Trading Algorithms, etc...), but other times that means working on projects around my house currently that means a foundation repair, a fence around my backyard, and a storage shed. and when I'm not working on projects, i'll be:</p>
+					<ul>
+						<li>Spending time with my family</li>
+						<li>Traveling</li>
+						<li>Cooking</li>
+						<li>Learning something new</li>
+					</ul>
+			    </div>
+			</div>
+		  	<p class="w3-large w3-center w3-padding-16">These are some of my skills:</p>
+			<!-- skill section -->
+			<p class="w3-wide"><i class="fa fa-microphone"></i>Communication</p>
+			<p class="w3-wide"><i class="fa fa-cloud"></i>Software Engineering</p>
+			<p class="w3-wide"><i class="fa fa-linode"></i>Software Architecting</p>
+			<p class="w3-wide"><i class="fa fa-cloud"></i>Dev-Ops</p>
+		  	<p class="w3-wide"><i class="fa fa-code"></i>CI-CD Solutions</p>
+		  	<p class="w3-wide"><i class="fa fa-tablet"></i>Designing Frameworks</p>
+		  	<p class="w3-wide"><i class="fa fa-linode"></i>Middleware Solutions</p>
+		  	<p class="w3-wide"><i class="fa fa-bug"></i>Troubleshooting/Main</p>
+		</div>
+
+		<div class="w3-row w3-center w3-dark-grey w3-padding-16">
+			<div class="w3-full w3-section">
+		    	<span class="w3-xlarge">10+ years</span><br>
+		    	Development Experience
+		  	</div>
+		</div>
+
+		<!-- Second Parallax Image with Resume Text -->
+		<div class="bgimg-2 w3-display-container w3-opacity-min">
+			<div class="w3-display-middle">
+		    	<span class="w3-xxlarge w3-text-white w3-wide">RESUME</span>
+		  	</div>
+		</div>
+		<!-- Container (Resume Section) -->
+		<div class="w3-content w3-container w3-padding-64" id="resume">
+			<h3 class="w3-center">MY WORK EXPERIENCE</h3>
+			<div class="w3-row-padding w3-center">
+		    	<div class="w3-container">
+					<h5 class="w3-opacity"><b>Senior Software Engineer / Appfolio</b></h5>
+					<h6 class="w3-text-gray"><i class="fa fa-calendar fa-fw w3-margin-right"></i>November 2019 - Present</h6>
+					<ul style="list-style-type:none">
+						<li>Created Salesforce Api Monitor App in Python.</li>
+						<li>Developed targeted dynamic community lightning component for community personalization.</li>
+						<li>Developed Article tracking and favoriting lightning component for Salesforce community.</li>
+						<li>Planned and Implemented team's exception logging and server monitoring.</li>
+						<li>Managed team's AWS servers and services including on-prem Mulesoft runtime.</li>
+						<li>Handled Mulesoft on-prem runtime upgrade with zero downtime.</li>
+						<li>Built and maintained System and Process API's via Mulesoft.</li>
+						<li>Built and maintained Salesforce embedded chat service with custom routing using static resources and custom Apex logic</li>
+						<li>Maintained Ruby on Rails ETL tool for syncing data between multiple systems.</li>
+						<li>Built Twilio Flex IVR's and functions to pull data from external services.</li>
+						<li>Worked cross-functionally to deliver Workday integrations. (via Mulesoft, EIB's, Core Connectors and Reports as a service)</li>
+						<li>Architected and delivered multiple custom realtime integration between Salesforce and multiple systems using AWS lambda, sqs, and mulesoft (Intercom, Comply Advantage)</li>
+						<li>Designed and built integration linking core product to billing information for entitlement of services</li>
+					</ul>
+					<hr>
+				</div>
+			<div class="w3-container">
+					<h5 class="w3-opacity"><b>Salesforce Developer / Appfolio</b></h5>
+					<h6 class="w3-text-gray"><i class="fa fa-calendar fa-fw w3-margin-right"></i>July 2017 - November 2019</h6>
+					<ul style="list-style-type:none">
+						<li>Built and maintained multiple APEX point to point REST and SOAP integrations</li>
+						<li>Built and maintained Python integrations using AWS services</li>
+						<li>Designed and Built APEX SMS bug/error notification system</li>
+						<li>Implemented custom RoundRobin System</li>
+						<li>Helped Implement custom large scale Error-Handling/Logging System</li>
+						<li>Helped Implement large scale Account restructure and Trigger Refactoring Project</li>
+						<li>Helped Implement and maintain CICD solution for Developer and Admin Team (AutoRabit)</li>
+						<li>Resolved conflicts and managed releases for salesforce team.</li>
+					</ul>
+					<hr>
+				</div>
+		        <div class="w3-container">
+					<h5 class="w3-opacity"><b>Salesforce Developer / LogMeIn (formerly Citrix Online)</b></h5>
+					<h6 class="w3-text-gray"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Feb 2017 - July 2017</h6>
+					<ul style="list-style-type:none">
+						<li>Designed and built custom Triggers for business processes</li>
+						<li>Helped troubleshoot issues with Dell Boomi integration for data sync between different salesforce organizations</li>
+						<li>Developed Marketing qualified lead score degradation classes for tracking customer ratings.</li>
+						<li>Converted Process Builder and Flow processes to scalable apex classes.</li>
+						<li>Helped build automated testing and automated deployment via Jenkins.</li>
+					</ul>
+					<hr>
+		        </div>
+		        <div class="w3-container">
+					<h5 class="w3-opacity"><b>Salesforce Administrator / Citrix Online</b></h5>
+					<h6 class="w3-text-gray"><i class="fa fa-calendar fa-fw w3-margin-right"></i>July 2015 - Feb 2017</h6>
+					<ul style="list-style-type:none">
+						<li>Managed and completed salesforce production support/troubleshooting/bug fix requests.</li>
+						<li>Designed and built custom Round Robin System (APEX)</li>
+						<li>Designed and built Idea/opportunity join process for improved communications between PM’s and sales/care representatives by customizing salesforce ideas object and apex.</li>
+						<li>Designed and built Primary Domain class for aligning accounts between two separate orgs.</li>
+						<li>Implemented and customized partner relationship management managed packages.</li>
+						<li>Worked in and agile scrum environment, as well as lead scrum teams in smaller projects.</li>
+						<li>Used Ant, Workbench, Change sets and manual customizations to promote changes to different development and full sandboxes for testing.</li>
+						<li>Completed regression, and functionality for fellow admins and developers for their work. Including completed SOX testing and uploading requirements using Atlassian software for project management.</li>
+					</ul>
+					<hr>
+		        </div>
+				<div class="w3-container">
+		        	<h5 class="w3-opacity"><b>Certifications</b></h5>
+				    <img src="img/adminCert1.png" style="width:20%">
+		    		<img src="img/sfDevCert1.png" style="width:20%">
+		    		<img src="img/sfDevCert2.png" style="width:20%">
+		    		<img src="img/muleDev1.png" style="width:20%">
+		    		<!--<img src="img/cloudPractitioner.png" style="width:20%">-->
+				</div>
+				<div class="w3-content w3-container w3-padding-64" id="resume">
+					<h3 class="w3-center">MY EDUCATION</h3>
+					<div class="w3-row-padding w3-center">
+						<div class="w3-container">
+							<h5 class="w3-opacity"><b>California Lutheran University</b></h5>
+							<h6 class="w3-text-gray"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2012 - 2016</h6>
+							<ul style="list-style-type:none">
+								<li>BS in Computer Science</li>
+								<li>Dean’s List recipient</li>
+								<li>Collegiate Waterpolo Player</li>
+							</ul>
+							<hr>
+						</div>
+					</div>
+				</div>
+		    </div>
+		</div>
+		<!-- Third Parallax Image with Resume Text -->
+		<div class="bgimg-3 w3-display-container w3-opacity-min">
+			<div class="w3-display-middle">
+				<span class="w3-xxlarge w3-text-white w3-wide">CONTACT</span>
+			</div>
+		</div>
+
+		<!-- add advertisement to site -->
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3529123929801464"
+		crossorigin="anonymous"></script>
+
+		<!-- Container (Contact Section) -->
+		<!-- Container (About Section) -->
+		<div class="w3-content w3-container w3-padding-64" id="contact">
+			<div class="w3-row w3-padding-32 w3-section">
+				<div class="w3-large w3-margin-bottom w3-center" >
+					<p><i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: hhamaker22@gmail.com<br></p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<footer class="w3-center w3-padding-32">
+			<a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-center"></i></a>
+			<div class="w3-xlarge w3-section">
+				<a href="https://github.com/hhamaker" target="_blank"><i class="fab fa-github w3-hover-opacity"></i></a>
+				<a href="https://www.linkedin.com/in/hhamaker/" target="_blank"><i class="fab fa-linkedin w3-hover-opacity"></i></a>
+				<a href="https://trailblazer.me/id/hhamaker" target="_blank"><i class="fab fa-salesforce w3-hover-opacity"></i></a>
+				<a href="https://www.facebook.com/hhamaker1" target="_blank"><i class="fab fa-facebook w3-hover-opacity"></i></a>
+				<!-- add in -->
+			</div>
+		</footer>
+		 
+		<!-- Add Google Maps -->
+		<script>
+			// Used to toggle the menu on small screens when clicking on the menu button
+			function toggleFunction() {
+			    var x = document.getElementById("navSmall");
+			    if (x.className.indexOf("w3-show") == -1) {
+			        x.className += " w3-show";
+			    } else {
+			        x.className = x.className.replace(" w3-show", "");
+			    }
+			}
+		</script>
+	</body>
+</html>
