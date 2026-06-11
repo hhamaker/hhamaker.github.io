@@ -1,268 +1,773 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<!-- Visualime Tracking Code -->
-		<script>
-			!function(e,i,n,s,t,c){e[s]||(visualime_site_id="30c5583f",e[s]={},e[s].callsQueue=[],e[s].api=function(){e[s].callsQueue.push(arguments)},t=i.createElement(n),c=i.getElementsByTagName(n)[0],t.async=1,t.src="https://visualime.com/v/visualime-a8b745.min.js",t.id=s+n,c.parentNode.insertBefore(t,c))}(window,document,"script","VISUALIME");
-		</script>
-	</head>
-	<title>Hunter's Website</title>
+<html lang="en">
+<head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-	<script src="https://kit.fontawesome.com/2f7837f687.js" crossorigin="anonymous"></script>	
+	<title>Hunter Hamaker — Senior Software Engineer</title>
+	<meta name="description" content="Hunter Hamaker is a senior software engineer and integration specialist with nearly a decade of experience across Salesforce, MuleSoft, AWS, Twilio, and Workday.">
+	<meta property="og:title" content="Hunter Hamaker — Senior Software Engineer">
+	<meta property="og:description" content="Integration specialist: Salesforce, MuleSoft, AWS, Twilio, Workday. Nearly a decade of building the systems that hold businesses together.">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://www.hunterhamaker.com/">
+	<meta property="og:image" content="https://www.hunterhamaker.com/img/me.jpg">
+	<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230c0f0e'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='17' font-weight='bold' fill='%2334d399' text-anchor='middle'%3E~H%3C/text%3E%3C/svg%3E">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 	<style>
-		body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
-		body, html {height: 100%; color: #777; line-height: 1.8;}
-
-		/* Create a Parallax Effect */
-		.bgimg-1, .bgimg-2, .bgimg-3 {
-		    background-attachment: fixed;
-		    background-position: center;
-		    background-repeat: no-repeat;
-		    background-size: cover;
+		:root {
+			--bg: #0b0e0d;
+			--bg-raise: rgba(255, 255, 255, 0.025);
+			--line: rgba(255, 255, 255, 0.07);
+			--text: #e7ece9;
+			--text-dim: #9fada6;
+			--text-faint: #5f6b66;
+			--accent: #34d399;
+			--accent-dim: rgba(52, 211, 153, 0.35);
+			--accent-glow: rgba(52, 211, 153, 0.07);
+			--mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+			--sans: "Instrument Sans", system-ui, sans-serif;
+			--display: "Syne", var(--sans);
 		}
 
-		/* First image (Logo. Full height) */
-		.bgimg-1 {
-		    background-image: url('img/Shoreline.jpg');
-		    min-height: 100%;
+		* { margin: 0; padding: 0; box-sizing: border-box; }
+
+		html { scroll-behavior: smooth; }
+
+		body {
+			background: var(--bg);
+			color: var(--text-dim);
+			font-family: var(--sans);
+			font-size: 1.0625rem;
+			line-height: 1.7;
+			-webkit-font-smoothing: antialiased;
 		}
 
-		/* Second image (Resume) */
-		.bgimg-2 {
-		    background-image: url('img/office.jpg');
-		    min-height: 400px;
+		/* Atmosphere: blueprint grid + emerald glow + grain */
+		body::before {
+			content: "";
+			position: fixed;
+			inset: 0;
+			z-index: -2;
+			background:
+				radial-gradient(ellipse 60% 50% at 12% 8%, var(--accent-glow), transparent 65%),
+				radial-gradient(ellipse 50% 40% at 95% 90%, rgba(52, 211, 153, 0.045), transparent 60%),
+				repeating-linear-gradient(0deg, transparent, transparent 47px, rgba(255,255,255,0.022) 48px),
+				repeating-linear-gradient(90deg, transparent, transparent 47px, rgba(255,255,255,0.022) 48px);
+		}
+		body::after {
+			content: "";
+			position: fixed;
+			inset: 0;
+			z-index: -1;
+			pointer-events: none;
+			opacity: 0.5;
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.045 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
 		}
 
-		/* Third image (Contact) */
-		.bgimg-3 {
-		    background-image: url('img/SantaBarbara.jpg');
-		    min-height: 400px;
+		::selection { background: var(--accent); color: #06241a; }
+
+		a { color: inherit; }
+		a:focus-visible, button:focus-visible {
+			outline: 2px solid var(--accent);
+			outline-offset: 3px;
+			border-radius: 2px;
 		}
 
-		.w3-wide {letter-spacing: 10px;}
-		.w3-hover-opacity {cursor: pointer;}
+		.layout {
+			max-width: 1440px;
+			margin: 0 auto;
+			display: grid;
+			grid-template-columns: minmax(380px, 34%) 1fr;
+			gap: clamp(2rem, 6vw, 7rem);
+			padding: 0 clamp(1.5rem, 5vw, 5rem);
+		}
 
-		/* Turn off parallax scrolling for tablets and phones */
-		@media only screen and (max-device-width: 1024px) {
-		    .bgimg-1, .bgimg-2, .bgimg-3 {
-		        background-attachment: scroll;
-		    }
+		/* ---------- Sidebar ---------- */
+		.sidebar {
+			position: sticky;
+			top: 0;
+			height: 100vh;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			padding: clamp(3rem, 8vh, 6rem) 0;
+		}
+
+		.kicker {
+			font-family: var(--mono);
+			font-size: 0.8rem;
+			letter-spacing: 0.12em;
+			color: var(--accent);
+			margin-bottom: 1.25rem;
+		}
+		.kicker::before { content: "~/ "; color: var(--text-faint); }
+
+		.sidebar h1 {
+			font-family: var(--display);
+			font-weight: 800;
+			font-size: clamp(2.6rem, 4.2vw, 3.9rem);
+			line-height: 1.02;
+			letter-spacing: -0.02em;
+			color: var(--text);
+			margin-bottom: 1rem;
+		}
+		.sidebar h1 .dot { color: var(--accent); }
+
+		.sidebar h2 {
+			font-family: var(--display);
+			font-weight: 700;
+			font-size: 1.15rem;
+			letter-spacing: 0.01em;
+			color: var(--text);
+			margin-bottom: 1.1rem;
+		}
+
+		.tagline {
+			max-width: 34ch;
+			font-size: 1rem;
+			margin-bottom: 0.75rem;
+		}
+		.tagline strong { color: var(--text); font-weight: 500; }
+
+		.stack-line {
+			font-family: var(--mono);
+			font-size: 0.78rem;
+			color: var(--text-faint);
+			margin-bottom: 2.5rem;
+		}
+		.stack-line .cursor {
+			display: inline-block;
+			width: 0.55em;
+			height: 1em;
+			margin-left: 2px;
+			vertical-align: text-bottom;
+			background: var(--accent);
+			animation: blink 1.1s steps(1) infinite;
+		}
+		@keyframes blink { 50% { opacity: 0; } }
+
+		.side-nav { list-style: none; }
+		.side-nav a {
+			display: flex;
+			align-items: center;
+			gap: 0.9rem;
+			padding: 0.5rem 0;
+			text-decoration: none;
+			font-family: var(--mono);
+			font-size: 0.8rem;
+			letter-spacing: 0.18em;
+			text-transform: uppercase;
+			color: var(--text-faint);
+			transition: color 0.25s;
+		}
+		.side-nav a::before {
+			content: "";
+			width: 2rem;
+			height: 1px;
+			background: var(--text-faint);
+			transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.25s;
+		}
+		.side-nav a:hover, .side-nav a.active { color: var(--text); }
+		.side-nav a:hover::before, .side-nav a.active::before {
+			width: 3.6rem;
+			background: var(--accent);
+		}
+		.side-nav .num { color: var(--accent-dim); }
+		.side-nav a.active .num, .side-nav a:hover .num { color: var(--accent); }
+
+		.sidebar-foot { display: flex; flex-direction: column; gap: 1.4rem; }
+
+		.uptime {
+			font-family: var(--mono);
+			font-size: 0.75rem;
+			color: var(--text-faint);
+		}
+		.uptime b { color: var(--accent); font-weight: 500; }
+
+		.socials { display: flex; gap: 1.1rem; }
+		.socials a {
+			display: grid;
+			place-items: center;
+			width: 2.5rem;
+			height: 2.5rem;
+			border: 1px solid var(--line);
+			border-radius: 8px;
+			color: var(--text-dim);
+			transition: color 0.25s, border-color 0.25s, transform 0.25s, background 0.25s;
+		}
+		.socials a:hover {
+			color: var(--accent);
+			border-color: var(--accent-dim);
+			background: var(--accent-glow);
+			transform: translateY(-3px);
+		}
+		.socials svg { width: 1.15rem; height: 1.15rem; fill: currentColor; }
+
+		/* ---------- Main column ---------- */
+		main { padding: clamp(3rem, 8vh, 6rem) 0 4rem; }
+
+		section { padding-bottom: clamp(4rem, 9vh, 7rem); }
+
+		.section-label {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+			font-family: var(--mono);
+			font-size: 0.78rem;
+			letter-spacing: 0.22em;
+			text-transform: uppercase;
+			color: var(--accent);
+			margin-bottom: 2.2rem;
+		}
+		.section-label::after {
+			content: "";
+			height: 1px;
+			flex: 1;
+			max-width: 9rem;
+			background: linear-gradient(90deg, var(--accent-dim), transparent);
+		}
+		.section-label .num { color: var(--text-faint); }
+
+		/* About */
+		.about-grid {
+			display: grid;
+			grid-template-columns: 1fr auto;
+			gap: 2.5rem;
+			align-items: start;
+		}
+		.about-grid p { margin-bottom: 1.1rem; max-width: 58ch; }
+		.about-grid p:last-child { margin-bottom: 0; }
+		.about-grid strong { color: var(--text); font-weight: 500; }
+		.about-grid .accent { color: var(--accent); }
+
+		.portrait {
+			width: 190px;
+			aspect-ratio: 1;
+			object-fit: cover;
+			border-radius: 12px;
+			border: 1px solid var(--line);
+			filter: saturate(0.85);
+			transition: filter 0.4s, transform 0.4s, box-shadow 0.4s;
+		}
+		.portrait-frame { position: relative; }
+		.portrait-frame::before {
+			content: "";
+			position: absolute;
+			inset: 0;
+			border: 1px solid var(--accent-dim);
+			border-radius: 12px;
+			transform: translate(10px, 10px);
+			transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+		}
+		.portrait-frame:hover::before { transform: translate(5px, 5px); }
+		.portrait-frame:hover .portrait {
+			filter: saturate(1);
+			box-shadow: 0 18px 50px -18px rgba(52, 211, 153, 0.25);
+		}
+
+		.stats {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 1px;
+			background: var(--line);
+			border: 1px solid var(--line);
+			border-radius: 12px;
+			overflow: hidden;
+			margin-top: 2.6rem;
+		}
+		.stat {
+			background: var(--bg);
+			padding: 1.4rem 1.5rem;
+		}
+		.stat .value {
+			font-family: var(--display);
+			font-weight: 800;
+			font-size: 2rem;
+			color: var(--text);
+			line-height: 1.1;
+		}
+		.stat .value span { color: var(--accent); }
+		.stat .label {
+			font-family: var(--mono);
+			font-size: 0.72rem;
+			letter-spacing: 0.08em;
+			color: var(--text-faint);
+			margin-top: 0.35rem;
+		}
+
+		/* Skills */
+		.skill-group { margin-bottom: 1.9rem; }
+		.skill-group:last-child { margin-bottom: 0; }
+		.skill-group h3 {
+			font-family: var(--mono);
+			font-weight: 500;
+			font-size: 0.78rem;
+			letter-spacing: 0.14em;
+			text-transform: uppercase;
+			color: var(--text-faint);
+			margin-bottom: 0.8rem;
+		}
+		.skill-group h3::before { content: "// "; color: var(--accent-dim); }
+		.chips { display: flex; flex-wrap: wrap; gap: 0.6rem; list-style: none; }
+		.chips li {
+			font-family: var(--mono);
+			font-size: 0.82rem;
+			color: var(--text-dim);
+			padding: 0.42rem 0.85rem;
+			border: 1px solid var(--line);
+			border-radius: 999px;
+			background: var(--bg-raise);
+			transition: color 0.25s, border-color 0.25s, background 0.25s, transform 0.25s;
+		}
+		.chips li:hover {
+			color: var(--accent);
+			border-color: var(--accent-dim);
+			background: var(--accent-glow);
+			transform: translateY(-2px);
+		}
+
+		/* Experience timeline */
+		.timeline { position: relative; list-style: none; }
+		.timeline::before {
+			content: "";
+			position: absolute;
+			left: 5px;
+			top: 6px;
+			bottom: 6px;
+			width: 1px;
+			background: linear-gradient(180deg, var(--accent-dim), var(--line) 60%);
+		}
+		.job {
+			position: relative;
+			padding: 0 0 2.8rem 2.4rem;
+		}
+		.job:last-child { padding-bottom: 0; }
+		.job::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 8px;
+			width: 11px;
+			height: 11px;
+			border-radius: 50%;
+			background: var(--bg);
+			border: 2px solid var(--accent);
+			box-shadow: 0 0 0 4px var(--accent-glow), 0 0 14px var(--accent-dim);
+		}
+		.job .period {
+			font-family: var(--mono);
+			font-size: 0.75rem;
+			letter-spacing: 0.1em;
+			color: var(--accent);
+			margin-bottom: 0.3rem;
+		}
+		.job h3 {
+			font-family: var(--display);
+			font-weight: 700;
+			font-size: 1.35rem;
+			color: var(--text);
+			letter-spacing: -0.01em;
+		}
+		.job .org {
+			font-family: var(--mono);
+			font-size: 0.85rem;
+			color: var(--text-faint);
+			margin-bottom: 0.9rem;
+		}
+		.job ul { list-style: none; }
+		.job li {
+			position: relative;
+			padding-left: 1.3rem;
+			margin-bottom: 0.55rem;
+			max-width: 62ch;
+		}
+		.job li::before {
+			content: "▸";
+			position: absolute;
+			left: 0;
+			color: var(--accent-dim);
+			font-size: 0.8em;
+			top: 0.25em;
+		}
+
+		/* Certifications */
+		.certs {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+			gap: 1.2rem;
+			list-style: none;
+		}
+		.cert {
+			border: 1px solid var(--line);
+			border-radius: 14px;
+			background: var(--bg-raise);
+			padding: 1.5rem 1.2rem 1.2rem;
+			text-align: center;
+			transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+		}
+		.cert:hover {
+			border-color: var(--accent-dim);
+			transform: translateY(-5px);
+			box-shadow: 0 20px 45px -20px rgba(52, 211, 153, 0.3);
+		}
+		.cert img { width: 100%; max-width: 120px; height: auto; }
+		.cert .cert-name {
+			display: block;
+			font-family: var(--mono);
+			font-size: 0.74rem;
+			letter-spacing: 0.06em;
+			color: var(--text-dim);
+			margin-top: 0.9rem;
+		}
+
+		/* Education */
+		.edu {
+			border: 1px solid var(--line);
+			border-left: 3px solid var(--accent);
+			border-radius: 0 12px 12px 0;
+			background: var(--bg-raise);
+			padding: 1.5rem 1.8rem;
+			max-width: 40rem;
+		}
+		.edu h3 {
+			font-family: var(--display);
+			font-weight: 700;
+			font-size: 1.2rem;
+			color: var(--text);
+		}
+		.edu .period {
+			font-family: var(--mono);
+			font-size: 0.75rem;
+			letter-spacing: 0.1em;
+			color: var(--accent);
+		}
+		.edu p { margin-top: 0.5rem; font-size: 0.97rem; }
+
+		/* Contact */
+		.contact h3 {
+			font-family: var(--display);
+			font-weight: 800;
+			font-size: clamp(2rem, 3.4vw, 3rem);
+			letter-spacing: -0.02em;
+			color: var(--text);
+			line-height: 1.1;
+			margin-bottom: 1rem;
+		}
+		.contact h3 span { color: var(--accent); }
+		.contact p { max-width: 48ch; margin-bottom: 2rem; }
+		.cta {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.7rem;
+			font-family: var(--mono);
+			font-size: 0.9rem;
+			letter-spacing: 0.05em;
+			text-decoration: none;
+			color: #06241a;
+			background: var(--accent);
+			padding: 0.95rem 1.7rem;
+			border-radius: 10px;
+			font-weight: 500;
+			transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
+		}
+		.cta:hover {
+			transform: translateY(-3px);
+			background: #45e0a8;
+			box-shadow: 0 18px 40px -14px rgba(52, 211, 153, 0.5);
+		}
+		.cta svg { width: 1.05rem; height: 1.05rem; fill: currentColor; }
+
+		footer {
+			padding: 2rem 0 1rem;
+			font-family: var(--mono);
+			font-size: 0.72rem;
+			color: var(--text-faint);
+		}
+		footer .accent { color: var(--accent-dim); }
+
+		/* Reveal animation */
+		.reveal {
+			opacity: 0;
+			transform: translateY(26px);
+			transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+		}
+		.reveal.in { opacity: 1; transform: none; }
+
+		/* Sidebar load-in */
+		@keyframes rise { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+		.sidebar > * > * { animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) backwards; }
+		.sidebar .kicker { animation-delay: 0.05s; }
+		.sidebar h1 { animation-delay: 0.12s; }
+		.sidebar h2 { animation-delay: 0.2s; }
+		.sidebar .tagline { animation-delay: 0.26s; }
+		.sidebar .stack-line { animation-delay: 0.32s; }
+		.sidebar .side-nav { animation-delay: 0.4s; }
+		.sidebar .uptime { animation-delay: 0.5s; }
+		.sidebar .socials { animation-delay: 0.56s; }
+
+		@media (prefers-reduced-motion: reduce) {
+			html { scroll-behavior: auto; }
+			.reveal { opacity: 1; transform: none; transition: none; }
+			.sidebar > * > * { animation: none; }
+			.stack-line .cursor { animation: none; }
+			* { transition-duration: 0.01ms !important; }
+		}
+
+		/* ---------- Mobile / tablet ---------- */
+		@media (max-width: 900px) {
+			.layout { grid-template-columns: 1fr; gap: 0; }
+			.sidebar {
+				position: static;
+				height: auto;
+				padding: 3.5rem 0 2.5rem;
+				gap: 2rem;
+			}
+			.side-nav { display: none; }
+			.sidebar-foot { flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
+			main { padding-top: 1rem; }
+			.about-grid { grid-template-columns: 1fr; }
+			.portrait-frame { justify-self: start; }
+			.stats { grid-template-columns: 1fr; }
 		}
 	</style>
-	<body>
-		<!-- Navbar (sit on top) -->
-		<div class="w3-top">
-			<div class="w3-bar w3-card w3-animate-top w3-white" id="myNavbar">
-			    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
-			    	<i class="fa fa-bars"></i>
-			    </a>
-			    <a href="#home" class="w3-bar-item w3-button w3-hide-small"><img src="img/logo.jpg" alt="Logo" width="20" height="20"></a>
-			    <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
-			    <a href="#resume" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> RESUME</a>
-			    <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
-			</div>
-
-			<!-- Navbar on small screens -->
-			<div id="navSmall" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-				<a href="#" class="w3-bar-item w3-button w3-center"><img src="img/logo.jpg" alt="Logo" width="30" height="30"></a>
-				<a href="#about" class="w3-bar-item w3-button w3-center" onclick="toggleFunction()">ABOUT</a>
-				<a href="#resume" class="w3-bar-item w3-button w3-center" onclick="toggleFunction()">RESUME</a>
-				<a href="#contact" class="w3-bar-item w3-button w3-center" onclick="toggleFunction()">CONTACT</a>
-			</div>
-		</div>
-
-		<!-- First Parallax Image with Logo Text -->
-		<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
-			<div class="w3-display-middle" style="white-space:nowrap;">
-				<img src="img/whiteLogo.jpg" class="w3-round w3-center w3-image" alt="Logo" width="100%" height="100%">
-			</div>
-		</div>
-		<!-- Container (About Section) -->
-		<div class="w3-content w3-container w3-padding-64" id="about">
-			<h3 class="w3-center">ABOUT ME</h3>
-			<p class="w3-center"><em>"Tell me and I forget. Teach me and I remember. Involve me and I learn.”</em> - Benjamin Franklin</p>
-		  	<div class="w3-row">
-			    <div class="w3-col m5 w3-center w3-padding-large">
-			    	<p><b><i class="fa w3-margin-right"></i>Hunter Hamaker</b></p><br>
-			    	<img src="img/me.jpg" class="w3-round w3-image" alt="Photo of Hunter" width="500" height="333">
-			    </div>
-
-			    <!-- Hide this text on small devices -->
-			    <div class="w3-col m5 w3-hide-small w3-padding-large">
-					<br/>
-					<br/>
-					<p>Welcome to my website. This is just a little bit about me, and what I'm all about. I spend most of my time working on projects. Sometimes that means code (Managed Packages, Django Web apps, Trading Algorithms, etc...), but other times that means working on projects around my house currently that means a foundation repair, a fence around my backyard, and a storage shed. and when I'm not working on projects, i'll be:</p>
-					<ul>
-						<li>Spending time with my family</li>
-						<li>Traveling</li>
-						<li>Cooking</li>
-						<li>Learning something new</li>
+</head>
+<body>
+	<div class="layout">
+		<header class="sidebar">
+			<div>
+				<p class="kicker">hunterhamaker.com</p>
+				<h1>Hunter<br>Hamaker<span class="dot">.</span></h1>
+				<h2>Senior Software Engineer</h2>
+				<p class="tagline">I design and build the integrations that hold business systems together — <strong>resilient, observable, and zero-downtime</strong>.</p>
+				<p class="stack-line">salesforce · mulesoft · aws · twilio · workday<span class="cursor"></span></p>
+				<nav aria-label="Section navigation">
+					<ul class="side-nav">
+						<li><a href="#about"><span class="num">01</span> About</a></li>
+						<li><a href="#skills"><span class="num">02</span> Skills</a></li>
+						<li><a href="#experience"><span class="num">03</span> Experience</a></li>
+						<li><a href="#certifications"><span class="num">04</span> Certifications</a></li>
+						<li><a href="#education"><span class="num">05</span> Education</a></li>
+						<li><a href="#contact"><span class="num">06</span> Contact</a></li>
 					</ul>
-			    </div>
+				</nav>
 			</div>
-		  	<p class="w3-large w3-center w3-padding-16">These are some of my skills:</p>
-			<!-- skill section -->
-			<p class="w3-wide"><i class="fa fa-microphone"></i>Communication</p>
-			<p class="w3-wide"><i class="fa fa-cloud"></i>Software Engineering</p>
-			<p class="w3-wide"><i class="fa fa-linode"></i>Software Architecting</p>
-			<p class="w3-wide"><i class="fa fa-cloud"></i>Dev-Ops</p>
-		  	<p class="w3-wide"><i class="fa fa-code"></i>CI-CD Solutions</p>
-		  	<p class="w3-wide"><i class="fa fa-tablet"></i>Designing Frameworks</p>
-		  	<p class="w3-wide"><i class="fa fa-linode"></i>Middleware Solutions</p>
-		  	<p class="w3-wide"><i class="fa fa-bug"></i>Troubleshooting/Main</p>
-		</div>
-
-		<div class="w3-row w3-center w3-dark-grey w3-padding-16">
-			<div class="w3-full w3-section">
-		    	<span class="w3-xlarge">10+ years</span><br>
-		    	Development Experience
-		  	</div>
-		</div>
-
-		<!-- Second Parallax Image with Resume Text -->
-		<div class="bgimg-2 w3-display-container w3-opacity-min">
-			<div class="w3-display-middle">
-		    	<span class="w3-xxlarge w3-text-white w3-wide">RESUME</span>
-		  	</div>
-		</div>
-		<!-- Container (Resume Section) -->
-		<div class="w3-content w3-container w3-padding-64" id="resume">
-			<h3 class="w3-center">MY WORK EXPERIENCE</h3>
-			<div class="w3-row-padding w3-center">
-		    	<div class="w3-container">
-					<h5 class="w3-opacity"><b>Senior Software Engineer / Appfolio</b></h5>
-					<h6 class="w3-text-gray"><i class="fa fa-calendar fa-fw w3-margin-right"></i>November 2019 - Present</h6>
-					<ul style="list-style-type:none">
-						<li>Created Salesforce Api Monitor App in Python.</li>
-						<li>Developed targeted dynamic community lightning component for community personalization.</li>
-						<li>Developed Article tracking and favoriting lightning component for Salesforce community.</li>
-						<li>Planned and Implemented team's exception logging and server monitoring.</li>
-						<li>Managed team's AWS servers and services including on-prem Mulesoft runtime.</li>
-						<li>Handled Mulesoft on-prem runtime upgrade with zero downtime.</li>
-						<li>Built and maintained System and Process API's via Mulesoft.</li>
-						<li>Built and maintained Salesforce embedded chat service with custom routing using static resources and custom Apex logic</li>
-						<li>Maintained Ruby on Rails ETL tool for syncing data between multiple systems.</li>
-						<li>Built Twilio Flex IVR's and functions to pull data from external services.</li>
-						<li>Worked cross-functionally to deliver Workday integrations. (via Mulesoft, EIB's, Core Connectors and Reports as a service)</li>
-						<li>Architected and delivered multiple custom realtime integration between Salesforce and multiple systems using AWS lambda, sqs, and mulesoft (Intercom, Comply Advantage)</li>
-						<li>Designed and built integration linking core product to billing information for entitlement of services</li>
-					</ul>
-					<hr>
+			<div class="sidebar-foot">
+				<p class="uptime">$ uptime → <b>~10 years</b> in production</p>
+				<div class="socials">
+					<a href="https://github.com/hhamaker" target="_blank" rel="noopener" aria-label="GitHub">
+						<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.34.96.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.26 5.67.41.36.78 1.06.78 2.14 0 1.54-.02 2.79-.02 3.17 0 .31.21.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+					</a>
+					<a href="https://www.linkedin.com/in/hhamaker/" target="_blank" rel="noopener" aria-label="LinkedIn">
+						<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+					</a>
+					<a href="https://trailblazer.me/id/hhamaker" target="_blank" rel="noopener" aria-label="Salesforce Trailblazer profile">
+						<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.06 5.95c.77-.8 1.85-1.3 3.04-1.3 1.59 0 2.97.88 3.71 2.2a5.1 5.1 0 0 1 2.09-.45A5.17 5.17 0 0 1 24 11.6a5.17 5.17 0 0 1-5.1 5.2c-.35 0-.7-.04-1.03-.1a3.75 3.75 0 0 1-3.29 1.94c-.58 0-1.12-.13-1.6-.36a4.29 4.29 0 0 1-3.97 2.66 4.28 4.28 0 0 1-4.04-2.85c-.27.05-.55.08-.83.08A4.18 4.18 0 0 1 0 13.96c0-1.55.84-2.9 2.09-3.62a4.8 4.8 0 0 1-.4-1.93A4.85 4.85 0 0 1 6.5 3.55a4.8 4.8 0 0 1 3.56 2.4Z"/></svg>
+					</a>
+					<a href="mailto:hhamaker22@gmail.com" aria-label="Email">
+						<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4h20a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Zm10 8.62 9-6.12V6.3l-9 6.12L3 6.3v.2l9 6.12ZM3 18h18V8.72l-9 6.12-9-6.12V18Z"/></svg>
+					</a>
 				</div>
-			<div class="w3-container">
-					<h5 class="w3-opacity"><b>Salesforce Developer / Appfolio</b></h5>
-					<h6 class="w3-text-gray"><i class="fa fa-calendar fa-fw w3-margin-right"></i>July 2017 - November 2019</h6>
-					<ul style="list-style-type:none">
-						<li>Built and maintained multiple APEX point to point REST and SOAP integrations</li>
-						<li>Built and maintained Python integrations using AWS services</li>
-						<li>Designed and Built APEX SMS bug/error notification system</li>
-						<li>Implemented custom RoundRobin System</li>
-						<li>Helped Implement custom large scale Error-Handling/Logging System</li>
-						<li>Helped Implement large scale Account restructure and Trigger Refactoring Project</li>
-						<li>Helped Implement and maintain CICD solution for Developer and Admin Team (AutoRabit)</li>
-						<li>Resolved conflicts and managed releases for salesforce team.</li>
-					</ul>
-					<hr>
-				</div>
-		        <div class="w3-container">
-					<h5 class="w3-opacity"><b>Salesforce Developer / LogMeIn (formerly Citrix Online)</b></h5>
-					<h6 class="w3-text-gray"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Feb 2017 - July 2017</h6>
-					<ul style="list-style-type:none">
-						<li>Designed and built custom Triggers for business processes</li>
-						<li>Helped troubleshoot issues with Dell Boomi integration for data sync between different salesforce organizations</li>
-						<li>Developed Marketing qualified lead score degradation classes for tracking customer ratings.</li>
-						<li>Converted Process Builder and Flow processes to scalable apex classes.</li>
-						<li>Helped build automated testing and automated deployment via Jenkins.</li>
-					</ul>
-					<hr>
-		        </div>
-		        <div class="w3-container">
-					<h5 class="w3-opacity"><b>Salesforce Administrator / Citrix Online</b></h5>
-					<h6 class="w3-text-gray"><i class="fa fa-calendar fa-fw w3-margin-right"></i>July 2015 - Feb 2017</h6>
-					<ul style="list-style-type:none">
-						<li>Managed and completed salesforce production support/troubleshooting/bug fix requests.</li>
-						<li>Designed and built custom Round Robin System (APEX)</li>
-						<li>Designed and built Idea/opportunity join process for improved communications between PM’s and sales/care representatives by customizing salesforce ideas object and apex.</li>
-						<li>Designed and built Primary Domain class for aligning accounts between two separate orgs.</li>
-						<li>Implemented and customized partner relationship management managed packages.</li>
-						<li>Worked in and agile scrum environment, as well as lead scrum teams in smaller projects.</li>
-						<li>Used Ant, Workbench, Change sets and manual customizations to promote changes to different development and full sandboxes for testing.</li>
-						<li>Completed regression, and functionality for fellow admins and developers for their work. Including completed SOX testing and uploading requirements using Atlassian software for project management.</li>
-					</ul>
-					<hr>
-		        </div>
-				<div class="w3-container">
-		        	<h5 class="w3-opacity"><b>Certifications</b></h5>
-				    <img src="img/adminCert1.png" style="width:20%">
-		    		<img src="img/sfDevCert1.png" style="width:20%">
-		    		<img src="img/sfDevCert2.png" style="width:20%">
-		    		<img src="img/muleDev1.png" style="width:20%">
-		    		<!--<img src="img/cloudPractitioner.png" style="width:20%">-->
-				</div>
-				<div class="w3-content w3-container w3-padding-64" id="resume">
-					<h3 class="w3-center">MY EDUCATION</h3>
-					<div class="w3-row-padding w3-center">
-						<div class="w3-container">
-							<h5 class="w3-opacity"><b>California Lutheran University</b></h5>
-							<h6 class="w3-text-gray"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2012 - 2016</h6>
-							<ul style="list-style-type:none">
-								<li>BS in Computer Science</li>
-								<li>Dean’s List recipient</li>
-								<li>Collegiate Waterpolo Player</li>
-							</ul>
-							<hr>
-						</div>
+			</div>
+		</header>
+
+		<main>
+			<section id="about" class="reveal">
+				<p class="section-label"><span class="num">01</span> About</p>
+				<div class="about-grid">
+					<div>
+						<p>I'm a senior software engineer at <strong>AppFolio</strong> with nearly a decade in the Salesforce ecosystem and the systems that orbit it. My specialty is <strong>integration architecture</strong> — designing the connective tissue between CRMs, ERPs, telephony, and cloud services so data moves where it needs to, when it needs to.</p>
+						<p>I've architected real-time pipelines on <span class="accent">AWS Lambda and SQS</span>, run a <span class="accent">MuleSoft</span> on-prem platform through a zero-downtime upgrade, wired <span class="accent">Salesforce</span> to billing, support, and compliance systems, and built the observability to keep it all honest. I like integrations that don't wake anyone up at 2 a.m.</p>
+						<p>Off the clock you'll find me with my family, traveling, cooking, or learning something new.</p>
+					</div>
+					<div class="portrait-frame">
+						<img class="portrait" src="img/me.jpg" alt="Photo of Hunter Hamaker">
 					</div>
 				</div>
-		    </div>
-		</div>
-		<!-- Third Parallax Image with Resume Text -->
-		<div class="bgimg-3 w3-display-container w3-opacity-min">
-			<div class="w3-display-middle">
-				<span class="w3-xxlarge w3-text-white w3-wide">CONTACT</span>
-			</div>
-		</div>
-
-		<!-- add advertisement to site -->
-		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3529123929801464"
-		crossorigin="anonymous"></script>
-
-		<!-- Container (Contact Section) -->
-		<!-- Container (About Section) -->
-		<div class="w3-content w3-container w3-padding-64" id="contact">
-			<div class="w3-row w3-padding-32 w3-section">
-				<div class="w3-large w3-margin-bottom w3-center" >
-					<p><i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: hhamaker22@gmail.com<br></p>
+				<div class="stats">
+					<div class="stat">
+						<div class="value">10<span>+</span></div>
+						<div class="label">years building software</div>
+					</div>
+					<div class="stat">
+						<div class="value">4<span>×</span></div>
+						<div class="label">Salesforce certified</div>
+					</div>
+					<div class="stat">
+						<div class="value">0</div>
+						<div class="label">downtime in platform upgrades</div>
+					</div>
 				</div>
-			</div>
-		</div>
+			</section>
 
-		<!-- Footer -->
-		<footer class="w3-center w3-padding-32">
-			<a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-center"></i></a>
-			<div class="w3-xlarge w3-section">
-				<a href="https://github.com/hhamaker" target="_blank"><i class="fab fa-github w3-hover-opacity"></i></a>
-				<a href="https://www.linkedin.com/in/hhamaker/" target="_blank"><i class="fab fa-linkedin w3-hover-opacity"></i></a>
-				<a href="https://trailblazer.me/id/hhamaker" target="_blank"><i class="fab fa-salesforce w3-hover-opacity"></i></a>
-				<a href="https://www.facebook.com/hhamaker1" target="_blank"><i class="fab fa-facebook w3-hover-opacity"></i></a>
-				<!-- add in -->
-			</div>
-		</footer>
-		 
-		<!-- Add Google Maps -->
-		<script>
-			// Used to toggle the menu on small screens when clicking on the menu button
-			function toggleFunction() {
-			    var x = document.getElementById("navSmall");
-			    if (x.className.indexOf("w3-show") == -1) {
-			        x.className += " w3-show";
-			    } else {
-			        x.className = x.className.replace(" w3-show", "");
-			    }
+			<section id="skills" class="reveal">
+				<p class="section-label"><span class="num">02</span> Skills</p>
+				<div class="skill-group">
+					<h3>Languages</h3>
+					<ul class="chips">
+						<li>Python</li>
+						<li>Apex</li>
+						<li>Ruby</li>
+						<li>JavaScript</li>
+						<li>SQL / SOQL</li>
+					</ul>
+				</div>
+				<div class="skill-group">
+					<h3>Platforms &amp; Integration</h3>
+					<ul class="chips">
+						<li>Salesforce</li>
+						<li>MuleSoft</li>
+						<li>Twilio Flex</li>
+						<li>Workday</li>
+						<li>Intercom</li>
+						<li>REST / SOAP APIs</li>
+					</ul>
+				</div>
+				<div class="skill-group">
+					<h3>Cloud &amp; DevOps</h3>
+					<ul class="chips">
+						<li>AWS Lambda</li>
+						<li>AWS SQS</li>
+						<li>CI/CD (Jenkins, AutoRabit)</li>
+						<li>Ruby on Rails</li>
+						<li>Monitoring &amp; Logging</li>
+					</ul>
+				</div>
+			</section>
+
+			<section id="experience" class="reveal">
+				<p class="section-label"><span class="num">03</span> Experience</p>
+				<ol class="timeline">
+					<li class="job">
+						<p class="period">Nov 2019 — Present</p>
+						<h3>Senior Software Engineer</h3>
+						<p class="org">AppFolio · Santa Barbara, CA</p>
+						<ul>
+							<li>Architected and shipped real-time integrations between Salesforce and external systems (Intercom, ComplyAdvantage) on AWS Lambda, SQS, and MuleSoft.</li>
+							<li>Designed the integration linking the core product to billing data, powering entitlement of customer services.</li>
+							<li>Built and maintained System and Process APIs on MuleSoft; executed an on-prem runtime upgrade with zero downtime.</li>
+							<li>Delivered Workday integrations cross-functionally via MuleSoft, EIBs, Core Connectors, and Reports-as-a-Service.</li>
+							<li>Owned the team's AWS infrastructure and observability — exception logging, server monitoring, and a Python Salesforce API monitor.</li>
+							<li>Built Twilio Flex IVRs and a Salesforce embedded chat service with custom Apex routing.</li>
+						</ul>
+					</li>
+					<li class="job">
+						<p class="period">Jul 2017 — Nov 2019</p>
+						<h3>Salesforce Developer</h3>
+						<p class="org">AppFolio · Santa Barbara, CA</p>
+						<ul>
+							<li>Built and maintained Apex REST/SOAP integrations and Python integrations running on AWS.</li>
+							<li>Helped deliver a large-scale error-handling and logging system, plus a major account restructure and trigger refactor.</li>
+							<li>Implemented and maintained CI/CD (AutoRabit) for the developer and admin teams; managed releases and resolved conflicts.</li>
+							<li>Designed an Apex SMS bug/error notification system and a custom round-robin assignment engine.</li>
+						</ul>
+					</li>
+					<li class="job">
+						<p class="period">Feb 2017 — Jul 2017</p>
+						<h3>Salesforce Developer</h3>
+						<p class="org">LogMeIn (formerly Citrix Online)</p>
+						<ul>
+							<li>Converted Process Builder and Flow automation into scalable Apex classes.</li>
+							<li>Built marketing-qualified-lead score degradation logic and custom triggers for core business processes.</li>
+							<li>Helped stand up automated testing and Jenkins-based deployments.</li>
+						</ul>
+					</li>
+					<li class="job">
+						<p class="period">Jul 2015 — Feb 2017</p>
+						<h3>Salesforce Administrator</h3>
+						<p class="org">Citrix Online</p>
+						<ul>
+							<li>Designed and built a custom round-robin assignment system in Apex.</li>
+							<li>Built cross-org account alignment and an Ideas-to-Opportunity join process connecting PMs with sales and care teams.</li>
+							<li>Owned production support and release promotion via Ant, Workbench, and change sets, including SOX testing.</li>
+						</ul>
+					</li>
+				</ol>
+			</section>
+
+			<section id="certifications" class="reveal">
+				<p class="section-label"><span class="num">04</span> Certifications</p>
+				<ul class="certs">
+					<li class="cert">
+						<img src="img/sfDevCert2.png" alt="Salesforce Certified Platform Developer II badge" loading="lazy">
+						<span class="cert-name">Platform Developer II</span>
+					</li>
+					<li class="cert">
+						<img src="img/sfDevCert1.png" alt="Salesforce Certified Platform Developer I badge" loading="lazy">
+						<span class="cert-name">Platform Developer I</span>
+					</li>
+					<li class="cert">
+						<img src="img/muleDev1.png" alt="Salesforce Certified MuleSoft Developer I badge" loading="lazy">
+						<span class="cert-name">MuleSoft Developer I</span>
+					</li>
+					<li class="cert">
+						<img src="img/adminCert1.png" alt="Salesforce Certified Administrator badge" loading="lazy">
+						<span class="cert-name">Administrator</span>
+					</li>
+				</ul>
+			</section>
+
+			<section id="education" class="reveal">
+				<p class="section-label"><span class="num">05</span> Education</p>
+				<div class="edu">
+					<p class="period">2012 — 2016</p>
+					<h3>California Lutheran University</h3>
+					<p>BS in Computer Science · Dean's List · Collegiate water polo player</p>
+				</div>
+			</section>
+
+			<section id="contact" class="contact reveal">
+				<p class="section-label"><span class="num">06</span> Contact</p>
+				<h3>Let's build something<br>that <span>just works</span>.</h3>
+				<p>Whether it's a gnarly integration problem or a team that needs a senior engineer who's seen it all break before — my inbox is open.</p>
+				<a class="cta" href="mailto:hhamaker22@gmail.com">
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4h20a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Zm10 8.62 9-6.12V6.3l-9 6.12L3 6.3v.2l9 6.12ZM3 18h18V8.72l-9 6.12-9-6.12V18Z"/></svg>
+					hhamaker22@gmail.com
+				</a>
+				<footer>
+					<p><span class="accent">//</span> Designed &amp; built by Hunter Hamaker · hand-rolled HTML &amp; CSS, no frameworks</p>
+				</footer>
+			</section>
+		</main>
+	</div>
+
+	<script>
+		(function () {
+			var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+			// Scroll-reveal sections
+			var sections = document.querySelectorAll(".reveal");
+			if (reduced || !("IntersectionObserver" in window)) {
+				sections.forEach(function (s) { s.classList.add("in"); });
+			} else {
+				var revealer = new IntersectionObserver(function (entries) {
+					entries.forEach(function (e) {
+						if (e.isIntersecting) {
+							e.target.classList.add("in");
+							revealer.unobserve(e.target);
+						}
+					});
+				}, { threshold: 0.12 });
+				sections.forEach(function (s) { revealer.observe(s); });
 			}
-		</script>
-	</body>
+
+			// Sidebar nav active state
+			var links = document.querySelectorAll(".side-nav a");
+			if ("IntersectionObserver" in window) {
+				var byId = {};
+				links.forEach(function (l) { byId[l.getAttribute("href").slice(1)] = l; });
+				var spy = new IntersectionObserver(function (entries) {
+					entries.forEach(function (e) {
+						if (e.isIntersecting) {
+							links.forEach(function (l) { l.classList.remove("active"); });
+							var link = byId[e.target.id];
+							if (link) link.classList.add("active");
+						}
+					});
+				}, { rootMargin: "-40% 0px -55% 0px" });
+				document.querySelectorAll("main section").forEach(function (s) { spy.observe(s); });
+			}
+		})();
+	</script>
+</body>
 </html>
