@@ -391,6 +391,41 @@
 			top: 0.25em;
 		}
 
+		/* Projects */
+		.projects {
+			display: grid;
+			gap: 1.2rem;
+			list-style: none;
+		}
+		.project {
+			border: 1px solid var(--line);
+			border-radius: 14px;
+			background: var(--bg-raise);
+			padding: 1.5rem 1.7rem;
+			transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+		}
+		.project:hover {
+			border-color: var(--accent-dim);
+			transform: translateY(-4px);
+			box-shadow: 0 20px 45px -20px rgba(52, 211, 153, 0.3);
+		}
+		.project .tech {
+			font-family: var(--mono);
+			font-size: 0.72rem;
+			letter-spacing: 0.12em;
+			text-transform: uppercase;
+			color: var(--accent);
+			margin-bottom: 0.4rem;
+		}
+		.project h3 {
+			font-family: var(--display);
+			font-weight: 700;
+			font-size: 1.2rem;
+			color: var(--text);
+			margin-bottom: 0.5rem;
+		}
+		.project p:last-child { font-size: 0.97rem; max-width: 68ch; }
+
 		/* Certifications */
 		.certs {
 			display: grid;
@@ -576,9 +611,10 @@
 						<li><a href="#about"><span class="num">01</span> About</a></li>
 						<li><a href="#skills"><span class="num">02</span> Skills</a></li>
 						<li><a href="#experience"><span class="num">03</span> Experience</a></li>
-						<li><a href="#certifications"><span class="num">04</span> Certifications</a></li>
-						<li><a href="#education"><span class="num">05</span> Education</a></li>
-						<li><a href="#contact"><span class="num">06</span> Contact</a></li>
+						<li><a href="#projects"><span class="num">04</span> Projects</a></li>
+						<li><a href="#certifications"><span class="num">05</span> Certifications</a></li>
+						<li><a href="#education"><span class="num">06</span> Education</a></li>
+						<li><a href="#contact"><span class="num">07</span> Contact</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -635,32 +671,37 @@
 				<div class="skill-group">
 					<h3>Languages</h3>
 					<ul class="chips">
-						<li>Python</li>
 						<li>Apex</li>
-						<li>Ruby</li>
+						<li>Python</li>
 						<li>JavaScript</li>
-						<li>SQL / SOQL</li>
+						<li>DataWeave</li>
+					</ul>
+				</div>
+				<div class="skill-group">
+					<h3>Salesforce Platform</h3>
+					<ul class="chips">
+						<li>Lightning Web Components</li>
+						<li>Aura</li>
+						<li>Salesforce Administration</li>
 					</ul>
 				</div>
 				<div class="skill-group">
 					<h3>Platforms &amp; Integration</h3>
 					<ul class="chips">
-						<li>Salesforce</li>
 						<li>MuleSoft</li>
 						<li>Workato</li>
-						<li>Twilio Flex</li>
 						<li>Workday</li>
+						<li>Snowflake</li>
+						<li>NetSuite</li>
+						<li>Twilio Flex</li>
 						<li>Intercom</li>
-						<li>REST / SOAP APIs</li>
 					</ul>
 				</div>
 				<div class="skill-group">
 					<h3>Cloud &amp; DevOps</h3>
 					<ul class="chips">
-						<li>AWS Lambda</li>
-						<li>AWS SQS</li>
+						<li>AWS</li>
 						<li>CI/CD (Jenkins, AutoRabit)</li>
-						<li>Ruby on Rails</li>
 						<li>Monitoring &amp; Logging</li>
 					</ul>
 				</div>
@@ -670,56 +711,56 @@
 				<p class="section-label"><span class="num">03</span> Experience</p>
 				<ol class="timeline">
 					<li class="job">
-						<p class="period">Nov 2019 — Present</p>
+						<p class="period">Jul 2017 — Present</p>
 						<h3>Senior Software Engineer</h3>
-						<p class="org">AppFolio · Santa Barbara, CA</p>
+						<p class="org">AppFolio · Goleta, CA</p>
 						<ul>
 							<li>Designed and built a scheduling application that saved the company $5 million.</li>
 							<li>Built AI skills that automate third-party vendor analysis, turning weeks of manual research into hours.</li>
-							<li>Architected and shipped real-time integrations between Salesforce and external systems (Intercom, ComplyAdvantage) on AWS Lambda, SQS, and MuleSoft.</li>
-							<li>Designed the integration linking the core product to billing data, powering entitlement of customer services.</li>
+							<li>Architected a Salesforce–Intercom integration on MuleSoft managing customer case interactions, scaled to 1.2 million requests per day.</li>
+							<li>Built an OFAC screening pipeline covering 200,000+ bank accounts with active fraud-hit monitoring, reducing liability risk on hundreds of millions in payment transactions.</li>
+							<li>Implemented a large-scale Apex trigger and class refactor, reducing silent failures by 99% through comprehensive exception handling and object-oriented design.</li>
+							<li>Implemented API-led connectivity best practices on MuleSoft, positioning enterprise systems to scale toward $1 billion in revenue.</li>
 							<li>Built and maintained System and Process APIs on MuleSoft; executed an on-prem runtime upgrade with zero downtime.</li>
-							<li>Delivered Workday integrations cross-functionally via MuleSoft, EIBs, Core Connectors, and Reports-as-a-Service.</li>
-							<li>Owned the team's AWS infrastructure and observability — exception logging, server monitoring, and a Python Salesforce API monitor.</li>
-							<li>Built Twilio Flex IVRs and a Salesforce embedded chat service with custom Apex routing.</li>
+							<li>Designed the integration linking the core product to billing data, powering entitlement of customer services.</li>
 						</ul>
 					</li>
 					<li class="job">
-						<p class="period">Jul 2017 — Nov 2019</p>
+						<p class="period">Jul 2015 — Jul 2017</p>
 						<h3>Salesforce Developer</h3>
-						<p class="org">AppFolio · Santa Barbara, CA</p>
+						<p class="org">LogMeIn (formerly Citrix Online) · Goleta, CA</p>
 						<ul>
-							<li>Built and maintained Apex REST/SOAP integrations and Python integrations running on AWS.</li>
-							<li>Helped deliver a large-scale error-handling and logging system, plus a major account restructure and trigger refactor.</li>
-							<li>Implemented and maintained CI/CD (AutoRabit) for the developer and admin teams; managed releases and resolved conflicts.</li>
-							<li>Designed an Apex SMS bug/error notification system and a custom round-robin assignment engine.</li>
-						</ul>
-					</li>
-					<li class="job">
-						<p class="period">Feb 2017 — Jul 2017</p>
-						<h3>Salesforce Developer</h3>
-						<p class="org">LogMeIn (formerly Citrix Online)</p>
-						<ul>
+							<li>Managed a large-scale Salesforce-to-Salesforce org migration, enabling LogMeIn to save millions in synergies by eliminating duplicate orgs.</li>
 							<li>Converted Process Builder and Flow automation into scalable Apex classes.</li>
-							<li>Built marketing-qualified-lead score degradation logic and custom triggers for core business processes.</li>
 							<li>Helped stand up automated testing and Jenkins-based deployments.</li>
-						</ul>
-					</li>
-					<li class="job">
-						<p class="period">Jul 2015 — Feb 2017</p>
-						<h3>Salesforce Administrator</h3>
-						<p class="org">Citrix Online</p>
-						<ul>
-							<li>Designed and built a custom round-robin assignment system in Apex.</li>
-							<li>Built cross-org account alignment and an Ideas-to-Opportunity join process connecting PMs with sales and care teams.</li>
-							<li>Owned production support and release promotion via Ant, Workbench, and change sets, including SOX testing.</li>
 						</ul>
 					</li>
 				</ol>
 			</section>
 
+			<section id="projects" class="reveal">
+				<p class="section-label"><span class="num">04</span> Projects</p>
+				<ul class="projects">
+					<li class="project">
+						<p class="tech">MuleSoft · Snowflake · Workday · NetSuite</p>
+						<h3>Large-Scale Forecasting Integration</h3>
+						<p>MuleSoft applications migrating and transforming data between Snowflake, Workday, NetSuite, and a forecasting system — supporting business scaling initiatives toward a $1 billion revenue target.</p>
+					</li>
+					<li class="project">
+						<p class="tech">Python</p>
+						<h3>YoYo App</h3>
+						<p>Round-robin framework for Apex code deployment, significantly reducing development time and improving deployment efficiency.</p>
+					</li>
+					<li class="project">
+						<p class="tech">Apex · Salesforce</p>
+						<h3>Round Robin Framework</h3>
+						<p>Framework for assigning owners to any field in Salesforce, giving Service and Sales Cloud users the ability to evenly distribute workloads.</p>
+					</li>
+				</ul>
+			</section>
+
 			<section id="certifications" class="reveal">
-				<p class="section-label"><span class="num">04</span> Certifications</p>
+				<p class="section-label"><span class="num">05</span> Certifications</p>
 				<ul class="certs">
 					<li>
 						<a class="cert" href="https://trailblazer.me/id/hhamaker" target="_blank" rel="noopener" title="Verify on Trailblazer">
@@ -797,7 +838,7 @@
 			</section>
 
 			<section id="education" class="reveal">
-				<p class="section-label"><span class="num">05</span> Education</p>
+				<p class="section-label"><span class="num">06</span> Education</p>
 				<div class="edu">
 					<h3>California Lutheran University</h3>
 					<p>BS in Computer Science · Dean's List · Collegiate water polo player</p>
@@ -805,7 +846,7 @@
 			</section>
 
 			<section id="contact" class="contact reveal">
-				<p class="section-label"><span class="num">06</span> Contact</p>
+				<p class="section-label"><span class="num">07</span> Contact</p>
 				<h3>Let's build something<br>that <span>just works</span>.</h3>
 				<p>Whether it's a gnarly integration problem or a team that needs a senior engineer who's seen it all break before — my inbox is open.</p>
 				<a class="cta" href="mailto:hhamaker22@gmail.com">
