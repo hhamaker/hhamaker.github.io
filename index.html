@@ -9,11 +9,38 @@
 	<meta property="og:description" content="Platform & architecture engineer: agent-to-agent AI systems, Salesforce, MuleSoft, AWS. A decade of building the systems that hold businesses together.">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://www.hunterhamaker.com/">
-	<meta property="og:image" content="https://www.hunterhamaker.com/img/me.jpg">
-	<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230c0f0e'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='17' font-weight='bold' fill='%2334d399' text-anchor='middle'%3E~H%3C/text%3E%3C/svg%3E">
+	<meta property="og:image" content="https://www.hunterhamaker.com/img/social-preview.png">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta property="og:image:alt" content="Hunter Hamaker — Senior Software Engineer. AI agents, integration architecture, and platforms built for production.">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Hunter Hamaker — Senior Software Engineer">
+	<meta name="twitter:description" content="AI agents, integration architecture, and platforms built for production.">
+	<meta name="twitter:image" content="https://www.hunterhamaker.com/img/social-preview.png">
+	<meta name="twitter:image:alt" content="Hunter Hamaker — Senior Software Engineer. AI agents, integration architecture, and platforms built for production.">
+	<meta name="theme-color" content="#0b0e0d">
+	<link rel="canonical" href="https://www.hunterhamaker.com/">
+	<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "Person",
+		"name": "Hunter Hamaker",
+		"url": "https://www.hunterhamaker.com/",
+		"image": "https://www.hunterhamaker.com/img/me.jpg",
+		"jobTitle": "Senior Software Engineer",
+		"worksFor": { "@type": "Organization", "name": "AppFolio" },
+		"alumniOf": { "@type": "CollegeOrUniversity", "name": "California Lutheran University" },
+		"sameAs": [
+			"https://github.com/hhamaker",
+			"https://www.linkedin.com/in/hhamaker/",
+			"https://trailblazer.me/id/hhamaker"
+		]
+	}
+	</script>
 	<style>
 		:root {
 			--bg: #0b0e0d;
@@ -21,7 +48,7 @@
 			--line: rgba(255, 255, 255, 0.07);
 			--text: #e7ece9;
 			--text-dim: #9fada6;
-			--text-faint: #5f6b66;
+			--text-faint: #899b92;
 			--accent: #34d399;
 			--accent-dim: rgba(52, 211, 153, 0.35);
 			--accent-glow: rgba(52, 211, 153, 0.07);
@@ -68,6 +95,19 @@
 		::selection { background: var(--accent); color: #06241a; }
 
 		a { color: inherit; }
+		[hidden] { display: none !important; }
+		button { font: inherit; cursor: pointer; }
+		.skip-link {
+			position: fixed;
+			top: 0.75rem;
+			left: 0.75rem;
+			z-index: 10;
+			padding: 0.75rem 1rem;
+			background: var(--accent);
+			color: var(--bg);
+			transform: translateY(-200%);
+		}
+		.skip-link:focus { transform: none; }
 		a:focus-visible, button:focus-visible {
 			outline: 2px solid var(--accent);
 			outline-offset: 3px;
@@ -78,20 +118,23 @@
 			max-width: 1440px;
 			margin: 0 auto;
 			display: grid;
-			grid-template-columns: minmax(380px, 34%) 1fr;
+			grid-template-columns: minmax(0, 34%) minmax(0, 1fr);
 			gap: clamp(2rem, 6vw, 7rem);
 			padding: 0 clamp(1.5rem, 5vw, 5rem);
 		}
+		.layout > *, .about-grid > * { min-width: 0; }
 
 		/* ---------- Sidebar ---------- */
 		.sidebar {
 			position: sticky;
 			top: 0;
-			height: 100vh;
+			height: 100svh;
+			gap: 2rem;
+			overflow-y: auto;
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
-			padding: clamp(3rem, 8vh, 6rem) 0;
+			padding: clamp(2rem, 5vh, 4rem) 0;
 		}
 
 		.kicker {
@@ -106,7 +149,7 @@
 		.sidebar h1 {
 			font-family: var(--display);
 			font-weight: 800;
-			font-size: clamp(2.6rem, 4.2vw, 3.9rem);
+			font-size: clamp(2rem, 3.6vw, 3.4rem);
 			line-height: 1.02;
 			letter-spacing: -0.02em;
 			color: var(--text);
@@ -114,7 +157,7 @@
 		}
 		.sidebar h1 .dot { color: var(--accent); }
 
-		.sidebar h2 {
+		.sidebar .role {
 			font-family: var(--display);
 			font-weight: 700;
 			font-size: 1.15rem;
@@ -173,7 +216,7 @@
 			width: 3.6rem;
 			background: var(--accent);
 		}
-		.side-nav .num { color: var(--accent-dim); }
+		.side-nav .num { color: var(--text-faint); }
 		.side-nav a.active .num, .side-nav a:hover .num { color: var(--accent); }
 
 		.sidebar-foot { display: flex; flex-direction: column; gap: 1.4rem; }
@@ -189,8 +232,8 @@
 		.socials a {
 			display: grid;
 			place-items: center;
-			width: 2.5rem;
-			height: 2.5rem;
+			width: 2.75rem;
+			height: 2.75rem;
 			border: 1px solid var(--line);
 			border-radius: 8px;
 			color: var(--text-dim);
@@ -207,7 +250,7 @@
 		/* ---------- Main column ---------- */
 		main { padding: clamp(3rem, 8vh, 6rem) 0 4rem; }
 
-		section { padding-bottom: clamp(4rem, 9vh, 7rem); }
+		section { padding-bottom: clamp(4rem, 9vh, 7rem); scroll-margin-top: 2rem; }
 
 		.section-label {
 			display: flex;
@@ -215,6 +258,7 @@
 			gap: 1rem;
 			font-family: var(--mono);
 			font-size: 0.78rem;
+			font-weight: 500;
 			letter-spacing: 0.22em;
 			text-transform: uppercase;
 			color: var(--accent);
@@ -232,8 +276,8 @@
 		/* About */
 		.about-grid {
 			display: grid;
-			grid-template-columns: 1fr auto;
-			gap: 2.5rem;
+			grid-template-columns: minmax(0, 1fr) auto;
+			gap: 1.5rem;
 			align-items: start;
 		}
 		.about-grid p { margin-bottom: 1.1rem; max-width: 58ch; }
@@ -243,6 +287,7 @@
 
 		.portrait {
 			width: 190px;
+			height: auto;
 			aspect-ratio: 1;
 			object-fit: cover;
 			border-radius: 12px;
@@ -268,7 +313,7 @@
 
 		.stats {
 			display: grid;
-			grid-template-columns: repeat(3, 1fr);
+			grid-template-columns: repeat(3, minmax(0, 1fr));
 			gap: 1px;
 			background: var(--line);
 			border: 1px solid var(--line);
@@ -278,7 +323,7 @@
 		}
 		.stat {
 			background: var(--bg);
-			padding: 1.4rem 1.5rem;
+			padding: 1.4rem 1rem;
 		}
 		.stat .value {
 			font-family: var(--display);
@@ -313,6 +358,8 @@
 		.chips li {
 			font-family: var(--mono);
 			font-size: 0.82rem;
+			max-width: 100%;
+			overflow-wrap: anywhere;
 			color: var(--text-dim);
 			padding: 0.42rem 0.85rem;
 			border: 1px solid var(--line);
@@ -424,12 +471,18 @@
 			color: var(--text);
 			margin-bottom: 0.5rem;
 		}
-		.project p:last-child { font-size: 0.97rem; max-width: 68ch; }
+		.project p:not(.tech) { font-size: 0.97rem; max-width: 68ch; margin-top: 0.7rem; }
+		.project strong { color: var(--text); font-weight: 600; }
+		.more-work { margin-top: 1.5rem; }
+		.more-work summary { cursor: pointer; color: var(--text); padding: 0.5rem 0; }
+		.more-work summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+		.more-work ul { padding-left: 1.25rem; }
+		.more-work li { margin-top: 0.75rem; }
 
 		/* Certifications */
 		.certs {
 			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+			grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr));
 			gap: 1.2rem;
 			list-style: none;
 		}
@@ -444,7 +497,7 @@
 			padding: 1.2rem 1.4rem;
 			transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
 		}
-		.cert:hover {
+		.cert:hover, .cert:focus-visible {
 			border-color: var(--accent-dim);
 			transform: translateY(-4px);
 			box-shadow: 0 20px 45px -20px rgba(52, 211, 153, 0.3);
@@ -487,10 +540,7 @@
 			font-family: var(--mono);
 			font-size: 0.7rem;
 			color: var(--accent);
-			opacity: 0;
-			transition: opacity 0.3s;
 		}
-		.cert:hover .cert-verify { opacity: 1; }
 
 		/* Education */
 		.edu {
@@ -526,12 +576,14 @@
 			align-items: center;
 			gap: 0.7rem;
 			font-family: var(--mono);
-			font-size: 0.9rem;
+			font-size: 0.85rem;
 			letter-spacing: 0.05em;
 			text-decoration: none;
 			color: #06241a;
 			background: var(--accent);
-			padding: 0.95rem 1.7rem;
+			padding: 0.95rem 1rem;
+			max-width: 100%;
+			overflow-wrap: anywhere;
 			border-radius: 10px;
 			font-weight: 500;
 			transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
@@ -542,6 +594,18 @@
 			box-shadow: 0 18px 40px -14px rgba(52, 211, 153, 0.5);
 		}
 		.cta svg { width: 1.05rem; height: 1.05rem; fill: currentColor; }
+		.cta svg { flex-shrink: 0; }
+		.print-button {
+			align-self: flex-start;
+			padding: 0.6rem 0.9rem;
+			border: 1px solid var(--text-faint);
+			border-radius: 8px;
+			background: transparent;
+			color: var(--text);
+			font-family: var(--mono);
+			font-size: 0.8rem;
+		}
+		.print-button:hover { border-color: var(--accent); color: var(--accent); }
 
 		footer {
 			padding: 2rem 0 1rem;
@@ -549,22 +613,18 @@
 			font-size: 0.72rem;
 			color: var(--text-faint);
 		}
-		footer .accent { color: var(--accent-dim); }
+		footer .accent { color: var(--accent); }
 
-		/* Reveal animation */
-		.reveal {
-			opacity: 0;
-			transform: translateY(26px);
-			transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-		}
-		.reveal.in { opacity: 1; transform: none; }
+		/* Content stays visible until an optional entrance animation runs. */
+		@keyframes reveal { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+		.reveal.in { animation: reveal 0.5s ease-out; }
 
 		/* Sidebar load-in */
 		@keyframes rise { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
 		.sidebar > * > * { animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) backwards; }
 		.sidebar .kicker { animation-delay: 0.05s; }
 		.sidebar h1 { animation-delay: 0.12s; }
-		.sidebar h2 { animation-delay: 0.2s; }
+		.sidebar .role { animation-delay: 0.2s; }
 		.sidebar .tagline { animation-delay: 0.26s; }
 		.sidebar .stack-line { animation-delay: 0.32s; }
 		.sidebar .side-nav { animation-delay: 0.4s; }
@@ -573,45 +633,99 @@
 
 		@media (prefers-reduced-motion: reduce) {
 			html { scroll-behavior: auto; }
-			.reveal { opacity: 1; transform: none; transition: none; }
+			.reveal.in { animation: none; }
 			.sidebar > * > * { animation: none; }
 			.stack-line .cursor { animation: none; }
 			* { transition-duration: 0.01ms !important; }
 		}
 
 		/* ---------- Mobile / tablet ---------- */
-		@media (max-width: 900px) {
-			.layout { grid-template-columns: 1fr; gap: 0; }
+		@media (max-width: 1100px) {
+			.layout { grid-template-columns: minmax(0, 1fr); gap: 0; }
 			.sidebar {
 				position: static;
 				height: auto;
+				overflow: visible;
 				padding: 3.5rem 0 2.5rem;
 				gap: 2rem;
 			}
-			.side-nav { display: none; }
+			.sidebar h1 { font-size: clamp(2rem, 7vw, 3.4rem); }
+			.side-nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; }
+			.side-nav a { min-height: 44px; gap: 0.4rem; letter-spacing: 0.08em; }
+			.side-nav a::before { display: none; }
 			.sidebar-foot { flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
 			main { padding-top: 1rem; }
-			.about-grid { grid-template-columns: 1fr; }
+		}
+		@media (max-width: 600px) {
+			.about-grid { grid-template-columns: minmax(0, 1fr); }
 			.portrait-frame { justify-self: start; }
 			.stats { grid-template-columns: 1fr; }
+			.cert { padding: 1rem; gap: 0.8rem; }
+			.project { padding: 1.25rem; }
+		}
+		@media (max-height: 850px) and (min-width: 1101px) {
+			.sidebar { position: static; height: auto; align-self: start; overflow: visible; }
+		}
+
+		@media print {
+			@page { margin: 15mm; }
+			:root { --bg: #fff; --bg-raise: #fff; --text: #111; --text-dim: #222; --text-faint: #444; --accent: #075b40; --line: #ccc; }
+			* { animation: none !important; transition: none !important; }
+			body { background: #fff; font-size: 10pt; line-height: 1.45; }
+			body::before, body::after, nav, .socials, .print-button, .skip-link, .cursor, .portrait-frame, footer { display: none !important; }
+			.layout { display: block; max-width: none; padding: 0; }
+			.sidebar { position: static; display: block; height: auto; padding: 0 0 1rem; overflow: visible; }
+			.sidebar h1 { font-size: 26pt; }
+			.sidebar h1 br { display: none; }
+			.sidebar .role { margin-bottom: 0.5rem; }
+			.tagline { max-width: none; margin-bottom: 0; }
+			.stack-line, .uptime { display: none; }
+			.sidebar-foot { display: none; }
+			main { padding: 0; }
+			section { padding-bottom: 1.5rem; }
+			.reveal { opacity: 1 !important; transform: none !important; }
+			.section-label { margin-bottom: 0.7rem; }
+			h2, h3 { break-after: avoid; }
+			.about-grid { display: block; }
+			.about-grid p, .project p:not(.tech), .job li { max-width: none; }
+			.stats { grid-template-columns: repeat(3, 1fr); margin-top: 1rem; }
+			.stat { padding: 0.7rem; }
+			.stat .value { font-size: 20pt; }
+			.project, .cert, .edu, .stat { break-inside: avoid; box-shadow: none; }
+			.project, .edu { padding: 0.8rem; }
+			.more-work:not([open]) { display: none; }
+			.job { padding-bottom: 1rem; }
+			.job li { break-inside: avoid; }
+			.timeline::before, .job::before, .portrait-frame::before { display: none; }
+			.job { padding-left: 0; }
+			.chips { gap: 0.3rem; }
+			.chips li { padding: 0.15rem 0.5rem; }
+			.skill-group { margin-bottom: 0.7rem; }
+			.certs { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+			.cert { padding: 0.5rem; }
+			.cert-hex { width: 35px; height: 40px; }
+			.contact h3 { font-size: 18pt; }
+			.contact p { margin-bottom: 0.5rem; }
+			.cta { padding: 0; background: none; color: #111; }
 		}
 	</style>
 </head>
 <body>
+	<a class="skip-link" href="#main">Skip to main content</a>
 	<div class="layout">
 		<header class="sidebar">
 			<div>
 				<p class="kicker">hunterhamaker.com</p>
-				<h1>Hunter<br>Hamaker<span class="dot">.</span></h1>
-				<h2>Senior Software Engineer · Platform &amp; Architecture</h2>
+				<h1>Hunter<br> Hamaker<span class="dot">.</span></h1>
+				<p class="role">Senior Software Engineer · Platform &amp; Architecture</p>
 				<p class="tagline">I build AI agents and the integrations that hold business systems together — <strong>resilient, observable, and zero-downtime</strong>.</p>
 				<p class="stack-line">ai agents · salesforce · mulesoft · aws · workday<span class="cursor"></span></p>
 				<nav aria-label="Section navigation">
 					<ul class="side-nav">
 						<li><a href="#about"><span class="num">01</span> About</a></li>
-						<li><a href="#skills"><span class="num">02</span> Skills</a></li>
+						<li><a href="#projects"><span class="num">02</span> Selected work</a></li>
 						<li><a href="#experience"><span class="num">03</span> Experience</a></li>
-						<li><a href="#projects"><span class="num">04</span> Projects</a></li>
+						<li><a href="#skills"><span class="num">04</span> Skills</a></li>
 						<li><a href="#certifications"><span class="num">05</span> Certifications</a></li>
 						<li><a href="#education"><span class="num">06</span> Education</a></li>
 						<li><a href="#contact"><span class="num">07</span> Contact</a></li>
@@ -619,7 +733,8 @@
 				</nav>
 			</div>
 			<div class="sidebar-foot">
-				<p class="uptime">$ uptime → <b>~10 years</b> in production</p>
+				<p class="uptime">$ uptime → <b>10+ years</b> in production</p>
+				<button class="print-button" type="button" hidden>Print / save résumé</button>
 				<div class="socials">
 					<a href="https://github.com/hhamaker" target="_blank" rel="noopener" aria-label="GitHub">
 						<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.34.96.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.26 5.67.41.36.78 1.06.78 2.14 0 1.54-.02 2.79-.02 3.17 0 .31.21.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
@@ -637,43 +752,107 @@
 			</div>
 		</header>
 
-		<main>
+		<main id="main" tabindex="-1">
 			<section id="about" class="reveal">
-				<p class="section-label"><span class="num">01</span> About</p>
+				<h2 class="section-label"><span class="num" aria-hidden="true">01</span> About</h2>
 				<div class="about-grid">
 					<div>
-						<p>I'm a senior software engineer on the <strong>platform &amp; architecture team at AppFolio</strong>, with nearly a decade in the Salesforce ecosystem and the systems that orbit it. My specialty is <strong>integration architecture</strong> — designing the connective tissue between CRMs, ERPs, telephony, and cloud services so data moves where it needs to, when it needs to. These days most of my work is <strong>agentic engineering</strong>: designing agent-to-agent communications for our enterprise apps and building AI agents and skills that take on real production work.</p>
-						<p>I've architected real-time pipelines on <span class="accent">AWS Lambda and SQS</span>, run a <span class="accent">MuleSoft</span> on-prem platform through a zero-downtime upgrade, wired <span class="accent">Salesforce</span> to billing, support, and compliance systems, and built the observability to keep it all honest. I like integrations that don't wake anyone up at 2 a.m.</p>
-						<p>Beyond the code, I lead large-scale initiatives — platform migrations, observability overhauls, architecture that pays for itself — and mentor engineers from early-career through fellow seniors as an SME across <span class="accent">Salesforce, MuleSoft, and AWS</span>.</p>
-						<p>Off the clock you'll find me with my family, traveling, cooking, or learning something new.</p>
+						<p>I'm a senior software engineer on the <strong>platform &amp; architecture team at AppFolio</strong>, with <strong>10+ years building software</strong>. I design production AI agents and the integrations connecting enterprise systems — with a focus on reliability, observability, and operating cost.</p>
+						<p>My work spans <span class="accent">Salesforce, MuleSoft, and AWS</span>: from a scheduling platform saving over <strong>$5 million annually</strong> to integrations serving <strong>1.2 million requests a day</strong>. I lead platform initiatives and mentor engineers from early-career through fellow seniors. Off the clock: family, traveling, cooking, and learning something new.</p>
 					</div>
 					<div class="portrait-frame">
-						<img class="portrait" src="img/me.jpg" alt="Photo of Hunter Hamaker">
+						<img class="portrait" src="img/me.jpg" alt="Photo of Hunter Hamaker" width="376" height="376">
 					</div>
 				</div>
 				<div class="stats">
 					<div class="stat">
-						<div class="value">10<span>+</span></div>
-						<div class="label">years building software</div>
-					</div>
-					<div class="stat">
-						<div class="value">7<span>×</span></div>
-						<div class="label">certifications held</div>
-					</div>
-					<div class="stat">
 						<div class="value">$5M<span>+</span></div>
 						<div class="label">saved annually through platform design</div>
+					</div>
+					<div class="stat">
+						<div class="value">1.2M</div>
+						<div class="label">integration requests per day</div>
+					</div>
+					<div class="stat">
+						<div class="value">AI<span> ↗</span></div>
+						<div class="label">Jira triage agent shipped to production</div>
 					</div>
 				</div>
 			</section>
 
+			<section id="projects" class="reveal">
+				<h2 class="section-label"><span class="num" aria-hidden="true">02</span> Selected work</h2>
+				<ul class="projects">
+					<li class="project">
+						<p class="tech">Python · MuleSoft · CloudHub 2.0</p>
+						<h3>YoYo: Making Platform Capacity Go Further</h3>
+						<p><strong>Problem.</strong> MuleSoft Process APIs needed a more efficient way to use licensed vCore capacity.</p>
+						<p><strong>My approach.</strong> Designed and built a scheduling application that orchestrates Process APIs to run when needed, rather than keeping them running continuously.</p>
+						<p><strong>Outcome.</strong> Over $5 million in annual licensing savings, with enough capacity freed to replace self-managed Runtime Fabric with CloudHub 2.0.</p>
+					</li>
+					<li class="project">
+						<p class="tech">AI Agents · A2A · MCP · Claude Code</p>
+						<h3>AI Systems That Take on Production Work</h3>
+						<p><strong>Problem.</strong> Enterprise agents need secure access to business systems, while engineering assessments involve weeks of manual research.</p>
+						<p><strong>My approach.</strong> Designing agent-to-agent communication patterns, shipping a Jira triage agent, and establishing a secure MCP access pattern for Salesforce. Built a Claude Code plugin marketplace for vendor assessments, architecture reviews, cost justification, and design documents.</p>
+						<p><strong>Outcome.</strong> A Jira triage agent in production and assessment workflows reduced from weeks of research to hours.</p>
+					</li>
+					<li class="project">
+						<p class="tech">Salesforce · Lightning Web Components · Zuora · Ironclad</p>
+						<h3>Contracts and Payments, Connected End to End</h3>
+						<p><strong>Problem.</strong> Customers needed a connected contract and payment experience across separate enterprise systems.</p>
+						<p><strong>My approach.</strong> Built the API, authentication and token/session layers, and Lightning Web Component UI; integrated Zuora payment capture with Ironclad contract preview and e-signature.</p>
+						<p><strong>Outcome.</strong> Delivered the customer-facing portal through production go-live and drove its security hardening.</p>
+					</li>
+				</ul>
+				<details class="more-work">
+					<summary>More integration work</summary>
+					<ul>
+						<li><strong>Stock-based compensation automation.</strong> Python pipeline transforming E*Trade equity reports into NetSuite journal entries across ~51,000 award vesting tranches over a 36-month forecast, eliminating manual quarterly close prep and extending the feed to Anaplan over AWS S3.</li>
+						<li><strong>Large-scale forecasting integration.</strong> MuleSoft applications migrating and transforming data between Snowflake, Workday, NetSuite, and a forecasting system to support scaling toward a $1 billion revenue target.</li>
+						<li><strong>Round Robin Framework.</strong> Apex framework for assigning owners to any field in Salesforce, helping Service and Sales Cloud users distribute workloads evenly.</li>
+					</ul>
+				</details>
+			</section>
+
+			<section id="experience" class="reveal">
+				<h2 class="section-label"><span class="num" aria-hidden="true">03</span> Experience</h2>
+				<ol class="timeline">
+					<li class="job">
+						<p class="period">Jul 2017 — Present</p>
+						<h3>Senior Software Engineer</h3>
+						<p class="org">AppFolio · Platform &amp; Architecture Team · Goleta, CA</p>
+						<ul>
+							<li>Lead enterprise AI and integration architecture: production agents, secure Salesforce access, and a scheduling platform saving over $5 million annually. See selected work above.</li>
+							<li>Architected a Salesforce–Intercom integration on MuleSoft managing customer case interactions, scaled to 1.2 million requests per day.</li>
+							<li>Built an OFAC screening pipeline covering 200,000+ bank accounts with active fraud-hit monitoring, reducing liability risk on hundreds of millions in payment transactions.</li>
+							<li>Led the Rollbar-to-Datadog observability migration and an Apex refactor that reduced silent failures by 99%; executed a MuleSoft on-prem runtime upgrade with zero downtime.</li>
+							<li>Ran vulnerability remediation across Python and Java services, standardized security tooling with Dependabot, CodeQL, and JFrog Artifactory, and tightened AWS IAM scoping.</li>
+							<li>Mentored engineers from early-career through fellow seniors as a subject-matter expert across Salesforce, MuleSoft, and AWS.</li>
+						</ul>
+					</li>
+					<li class="job">
+						<p class="period">Jul 2015 — Jul 2017</p>
+						<h3>Salesforce Developer</h3>
+						<p class="org">LogMeIn (formerly Citrix Online) · Goleta, CA</p>
+						<ul>
+							<li>Managed a large-scale Salesforce-to-Salesforce org migration, enabling LogMeIn to save millions in synergies by eliminating duplicate orgs.</li>
+							<li>Converted Process Builder and Flow automation into scalable Apex classes.</li>
+							<li>Helped stand up automated testing and Jenkins-based deployments.</li>
+						</ul>
+					</li>
+				</ol>
+			</section>
+
 			<section id="skills" class="reveal">
-				<p class="section-label"><span class="num">02</span> Skills</p>
+				<h2 class="section-label"><span class="num" aria-hidden="true">04</span> Skills</h2>
 				<div class="skill-group">
 					<h3>AI &amp; Agents</h3>
 					<ul class="chips">
 						<li>Agentic Engineering</li>
 						<li>AI Skills &amp; Automations</li>
+						<li>Agent-to-Agent Architecture</li>
+						<li>MCP</li>
 					</ul>
 				</div>
 				<div class="skill-group">
@@ -718,69 +897,8 @@
 				</div>
 			</section>
 
-			<section id="experience" class="reveal">
-				<p class="section-label"><span class="num">03</span> Experience</p>
-				<ol class="timeline">
-					<li class="job">
-						<p class="period">Jul 2017 — Present</p>
-						<h3>Senior Software Engineer</h3>
-						<p class="org">AppFolio · Platform &amp; Architecture Team · Goleta, CA</p>
-						<ul>
-							<li>Designing agent-to-agent (A2A) AI communication architecture for AppFolio's enterprise applications, setting the patterns the platform's agentic systems are built on — including a Jira triage agent shipped to production and a secure MCP access pattern for Salesforce.</li>
-							<li>Designed and built a scheduling application that orchestrates MuleSoft Process APIs for efficient vCore usage — saving over $5 million a year in licensing costs and freeing enough capacity to replace self-managed Runtime Fabric with CloudHub 2.0.</li>
-							<li>Built an enterprise AI skills platform — a Claude Code plugin marketplace automating third-party vendor and technical assessments, TPRM architecture reviews, cost justification, and ADR/TDD generation — turning weeks of manual research into hours.</li>
-							<li>Built a customer-facing contract &amp; payment portal end-to-end — API with token/session and auth layers, a Lightning Web Component UI, Zuora payment capture, and Ironclad e-signature with contract preview — and drove security hardening through production go-live.</li>
-							<li>Led the initiative to migrate the team's observability platform from Rollbar to Datadog.</li>
-							<li>Ran vulnerability remediation across the team's Python and Java services — patching CVEs (Spring Boot / spring-security, lxml, starlette, FluentBit) and standardizing on Dependabot, CodeQL, and JFrog Artifactory, with tightened AWS IAM scoping.</li>
-							<li>Mentored engineers from early-career through fellow seniors as a subject-matter expert across Salesforce, MuleSoft, and AWS.</li>
-							<li>Architected a Salesforce–Intercom integration on MuleSoft managing customer case interactions, scaled to 1.2 million requests per day.</li>
-							<li>Built an OFAC screening pipeline covering 200,000+ bank accounts with active fraud-hit monitoring, reducing liability risk on hundreds of millions in payment transactions.</li>
-							<li>Led a large-scale Apex trigger and class refactor, reducing silent failures by 99% through comprehensive exception handling and object-oriented design.</li>
-							<li>Implemented API-led connectivity best practices on MuleSoft, positioning enterprise systems to scale toward $1 billion in revenue.</li>
-							<li>Built and maintained System and Process APIs on MuleSoft; executed an on-prem runtime upgrade with zero downtime.</li>
-						</ul>
-					</li>
-					<li class="job">
-						<p class="period">Jul 2015 — Jul 2017</p>
-						<h3>Salesforce Developer</h3>
-						<p class="org">LogMeIn (formerly Citrix Online) · Goleta, CA</p>
-						<ul>
-							<li>Managed a large-scale Salesforce-to-Salesforce org migration, enabling LogMeIn to save millions in synergies by eliminating duplicate orgs.</li>
-							<li>Converted Process Builder and Flow automation into scalable Apex classes.</li>
-							<li>Helped stand up automated testing and Jenkins-based deployments.</li>
-						</ul>
-					</li>
-				</ol>
-			</section>
-
-			<section id="projects" class="reveal">
-				<p class="section-label"><span class="num">04</span> Projects</p>
-				<ul class="projects">
-					<li class="project">
-						<p class="tech">MuleSoft · Snowflake · Workday · NetSuite</p>
-						<h3>Large-Scale Forecasting Integration</h3>
-						<p>MuleSoft applications migrating and transforming data between Snowflake, Workday, NetSuite, and a forecasting system — supporting business scaling initiatives toward a $1 billion revenue target.</p>
-					</li>
-					<li class="project">
-						<p class="tech">Python · AWS S3 · NetSuite · Anaplan</p>
-						<h3>Stock-Based Compensation Automation</h3>
-						<p>Pipeline that transforms E*Trade equity reports into NetSuite journal entries across ~51,000 award vesting tranches over a 36-month forecast — eliminating manual quarterly close prep and extending the feed to Anaplan over AWS S3.</p>
-					</li>
-					<li class="project">
-						<p class="tech">Python · MuleSoft</p>
-						<h3>YoYo App</h3>
-						<p>vCore scheduling tool that orchestrates MuleSoft Process APIs to run only when needed — cutting licensing costs by over $5 million a year and freeing enough capacity to retire self-managed Runtime Fabric for CloudHub 2.0.</p>
-					</li>
-					<li class="project">
-						<p class="tech">Apex · Salesforce</p>
-						<h3>Round Robin Framework</h3>
-						<p>Framework for assigning owners to any field in Salesforce, giving Service and Sales Cloud users the ability to evenly distribute workloads.</p>
-					</li>
-				</ul>
-			</section>
-
 			<section id="certifications" class="reveal">
-				<p class="section-label"><span class="num">05</span> Certifications</p>
+				<h2 class="section-label"><span class="num" aria-hidden="true">05</span> Certifications</h2>
 				<ul class="certs">
 					<li>
 						<a class="cert" href="https://trailblazer.me/id/hhamaker" target="_blank" rel="noopener" title="Verify on Trailblazer">
@@ -870,7 +988,7 @@
 			</section>
 
 			<section id="education" class="reveal">
-				<p class="section-label"><span class="num">06</span> Education</p>
+				<h2 class="section-label"><span class="num" aria-hidden="true">06</span> Education</h2>
 				<div class="edu">
 					<h3>California Lutheran University</h3>
 					<p>BS in Computer Science · Dean's List · Collegiate water polo player</p>
@@ -878,7 +996,7 @@
 			</section>
 
 			<section id="contact" class="contact reveal">
-				<p class="section-label"><span class="num">07</span> Contact</p>
+				<h2 class="section-label"><span class="num" aria-hidden="true">07</span> Contact</h2>
 				<h3>Let's build something<br>that <span>just works</span>.</h3>
 				<p>Whether it's a gnarly integration problem or a team that needs a senior engineer who's seen it all break before — my inbox is open.</p>
 				<a class="cta" href="mailto:hhamaker22@gmail.com">
@@ -894,13 +1012,14 @@
 
 	<script>
 		(function () {
+			var printButton = document.querySelector(".print-button");
+			printButton.addEventListener("click", function () { window.print(); });
+			printButton.hidden = false;
 			var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 			// Scroll-reveal sections
 			var sections = document.querySelectorAll(".reveal");
-			if (reduced || !("IntersectionObserver" in window)) {
-				sections.forEach(function (s) { s.classList.add("in"); });
-			} else {
+			if (!reduced && "IntersectionObserver" in window) {
 				var revealer = new IntersectionObserver(function (entries) {
 					entries.forEach(function (e) {
 						if (e.isIntersecting) {
@@ -908,7 +1027,7 @@
 							revealer.unobserve(e.target);
 						}
 					});
-				}, { threshold: 0.12 });
+				}, { threshold: 0 });
 				sections.forEach(function (s) { revealer.observe(s); });
 			}
 
@@ -920,9 +1039,15 @@
 				var spy = new IntersectionObserver(function (entries) {
 					entries.forEach(function (e) {
 						if (e.isIntersecting) {
-							links.forEach(function (l) { l.classList.remove("active"); });
+							links.forEach(function (l) {
+								l.classList.remove("active");
+								l.removeAttribute("aria-current");
+							});
 							var link = byId[e.target.id];
-							if (link) link.classList.add("active");
+							if (link) {
+								link.classList.add("active");
+								link.setAttribute("aria-current", "location");
+							}
 						}
 					});
 				}, { rootMargin: "-40% 0px -55% 0px" });
