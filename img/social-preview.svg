@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#1b2b24" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="glow" cx="0" cy="0" r="1">
+      <stop stop-color="#123d2d"/>
+      <stop offset="1" stop-color="#0b0e0d"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect x="72" y="90" width="56" height="4" fill="#34d399"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="72" y="175" fill="#34d399" font-size="24" letter-spacing="4">PLATFORM &amp; ARCHITECTURE</text>
+    <text x="72" y="285" fill="#e7ece9" font-size="82" font-weight="700">Hunter Hamaker<tspan fill="#34d399">.</tspan></text>
+    <text x="72" y="355" fill="#e7ece9" font-size="36">Senior Software Engineer</text>
+    <text x="72" y="427" fill="#adbbb3" font-size="28">AI agents. Integration architecture.</text>
+    <text x="72" y="470" fill="#adbbb3" font-size="28">Platforms built for production.</text>
+    <text x="72" y="560" fill="#34d399" font-size="23" letter-spacing="2">hunterhamaker.com</text>
+  </g>
+</svg>
