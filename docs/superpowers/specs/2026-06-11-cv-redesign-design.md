@@ -7,7 +7,7 @@ Site: www.hunterhamaker.com (GitHub Pages, single `index.html`)
 ## Goal
 
 Replace the w3.css parallax template with a sleek, modern, dark single-page CV
-that positions Hunter Hamaker as a senior software engineer / integration
+that positions Hunter Hamaker as a staff software engineer / integration
 specialist with 10+ years of experience. Target audience: potential
 employers.
 
